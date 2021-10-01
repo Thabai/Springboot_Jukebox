@@ -1,7 +1,6 @@
 package com.tsi.springboot.testing.springbootdemo;
 
-import com.tsi.springboot.testing.springbootdemo.Song;
-
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,7 +53,7 @@ public class Album {
         return null;
     }
 
-    public boolean addToPlaylist(String Track, LinkedList<Song> playlist) {
+    public boolean addToPlaylist(String Track, ArrayList<Song> playlist) {
         Song checkedSong = songAvailable(Track);
         if (checkedSong != null) {
             playlist.add(checkedSong);
@@ -63,4 +62,8 @@ public class Album {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return "{ Albums Available: [Album Name = " + this.albumTitle + ", Artist = " + this.albumArtist + ", Song List = " + this.albumSongs + "]}";
+    }
 }

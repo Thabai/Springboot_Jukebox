@@ -2,12 +2,13 @@ package com.tsi.springboot.testing.springbootdemo;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class MainJukebox {
 
-    private static final LinkedList<Album> albums = new LinkedList<>();
-//    private static LinkedList<Song> playlist = new LinkedList<>();
+    public static LinkedList<Album> albums = new LinkedList<Album>();
 
     public MainJukebox() {
 
@@ -24,10 +25,10 @@ public class MainJukebox {
         albums.add(album);
 //        printListAlbum(albums);
 
-//        albums.get(0).addToPlaylist("Girls Got Rhythm", playlist);
-//        albums.get(0).addToPlaylist("Touch Too Much", playlist);
-//        albums.get(1).addToPlaylist("Stoked", playlist);
-//        ////        printPlaylist(playlist);
+    }
+
+    public static List<Album> getAlbumsAvailable(){
+        return albums;
     }
 
     public String toString(){
@@ -35,18 +36,23 @@ public class MainJukebox {
     }
 
     public static class Playlist{
-        private static final LinkedList<Song> playlist = new LinkedList<>();
+        public static ArrayList<Song> defaultPlaylist = new ArrayList<Song>();
 
         public Playlist() {
-            albums.get(0).addToPlaylist("Girls Got Rhythm", playlist);
-            albums.get(0).addToPlaylist("Touch Too Much", playlist);
-            albums.get(1).addToPlaylist("Stoked", playlist);
+            albums.get(0).addToPlaylist("Girls Got Rhythm", defaultPlaylist);
+            albums.get(0).addToPlaylist("Touch Too Much", defaultPlaylist);
+            albums.get(1).addToPlaylist("Stoked", defaultPlaylist);
             ////        printPlaylist(playlist);
         }
 
-        public String toString(){
-            return new Gson().toJson(playlist);
+        public static ArrayList<Song> getDefaultPlaylist(){
+            return defaultPlaylist;
         }
+        
+        public String toString(){
+            return new Gson().toJson(defaultPlaylist);
+        }
+
     }
 
 

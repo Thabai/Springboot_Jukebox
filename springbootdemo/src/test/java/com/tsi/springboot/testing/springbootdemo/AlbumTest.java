@@ -2,6 +2,7 @@ package com.tsi.springboot.testing.springbootdemo;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,22 +41,22 @@ public class AlbumTest {
 
     @Test
     public void testGetPlaylist(){
-        LinkedList<Album> albums = new LinkedList<>();
+        ArrayList<Album> albums = new ArrayList<>();
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Party Rocking", "LMFAO");
         albums.add(testSongs);
-        LinkedList<Song> playlist = new LinkedList<Song>();
+        ArrayList<Song> playlist = new ArrayList<Song>();
         assertTrue(albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
     }
 
 
     @Test
     public void testGetPlaylistToFail(){
-        LinkedList<Album> albums = new LinkedList<>();
+        ArrayList<Album> albums = new ArrayList<>();
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Surfin USA", "Beach Boys");
         albums.add(testSongs);
-        LinkedList<Song> playlist = new LinkedList<Song>();
+        ArrayList<Song> playlist = new ArrayList<Song>();
         assertFalse(albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
     }
 }

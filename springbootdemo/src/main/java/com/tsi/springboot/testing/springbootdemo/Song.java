@@ -51,4 +51,13 @@ public class Song {
     public boolean getPlaying() {
         return Playing;
     }
+
+    @Override
+    public String toString() {
+        return
+                "{" +
+                        "\"Track Name\"= \"" + this.Track +
+                        "\", \"Artist\"=\"" + this.Artist  +
+                        "\"}";
+    }
 }
