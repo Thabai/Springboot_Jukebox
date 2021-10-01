@@ -1,12 +1,10 @@
 package com.tsi.springboot.testing.springbootdemo;
 
-import com.tsi.springboot.testing.springbootdemo.Album;
-import com.tsi.springboot.testing.springbootdemo.Song;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AlbumTest {
 
@@ -20,7 +18,7 @@ public class AlbumTest {
     @Test
     public void testGetSetAlbumToFail() {
         Album testSongs = new Album("Surfin USA", "Beach Boys");
-        assertEquals(null, testSongs.getAlbumSongs(),"No album songs");
+        assertNull(testSongs.getAlbumSongs(), "No album songs");
     }
 
     @Test
@@ -47,7 +45,7 @@ public class AlbumTest {
         testSongs.addAlbumSong("Party Rocking", "LMFAO");
         albums.add(testSongs);
         LinkedList<Song> playlist = new LinkedList<Song>();
-        assertEquals(true, albums.get(0).addToPlaylist("Party Rocking", playlist),"Song not found");
+        assertTrue(albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
     }
 
 
@@ -58,6 +56,6 @@ public class AlbumTest {
         testSongs.addAlbumSong("Surfin USA", "Beach Boys");
         albums.add(testSongs);
         LinkedList<Song> playlist = new LinkedList<Song>();
-        assertEquals(false, albums.get(0).addToPlaylist("Party Rocking", playlist),"Song not found");
+        assertFalse(albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
     }
 }

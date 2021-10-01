@@ -1,6 +1,5 @@
 package com.tsi.springboot.testing.springbootdemo;
 
-import com.tsi.springboot.testing.springbootdemo.Song;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,6 +35,6 @@ public class SongTest {
         Song testSong = new Song();
         testSong.setSong("Surfin USA", "Beach Boys");
         testSong.play();
-        assertEquals(true, testSong.getPlaying(),"Nothing playing");
+        assertTrue(testSong.getPlaying(), "Nothing playing");
     }
 }

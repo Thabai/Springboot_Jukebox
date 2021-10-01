@@ -1,6 +1,6 @@
 package com.tsi.springboot.testing.springbootdemo;
 
-public class Song{
+public class Song {
     private String Track;
     private String Artist;
     private boolean Playing = false;
@@ -8,11 +8,12 @@ public class Song{
     public Song() {
         this("test");
     }
+
     public Song(String track) {
         this("test", "tester");
     }
 
-    public Song (String Track, String Artist){
+    public Song(String Track, String Artist) {
         super();
         this.Track = Track;
         this.Artist = Artist;
@@ -34,12 +35,12 @@ public class Song{
         this.Artist = artist;
     }
 
-    public void setSong(String track, String artist){
+    public void setSong(String track, String artist) {
         this.Track = track;
         this.Artist = artist;
     }
 
-    public String getSong(){
+    public String getSong() {
         return "Now playing " + this.Track + " by the " + this.Artist;
     }
 
@@ -49,10 +50,5 @@ public class Song{
 
     public boolean getPlaying() {
         return Playing;
-    }
-
-    @Override
-    public String toString(){
-        return "{ Now playing " + this.Track + " by the " + this.Artist + "}";
     }
 }
