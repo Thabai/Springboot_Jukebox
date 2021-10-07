@@ -12,19 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AlbumTest {
 
     @Test
-    public void testGetSetAlbum() {
-        Album testSongs = new Album("Surfin USA", "Beach Boys");
-        testSongs.addAlbumSong("Farmer's Daughter", "Beach Boys");
-        assertEquals("Songs in album: Farmer's Daughter", testSongs.getAlbumSongs(),"No album songs");
-    }
-
-    @Test
-    public void testGetSetAlbumToFail() {
-        Album testSongs = new Album("Surfin USA", "Beach Boys");
-        assertNull(testSongs.getAlbumSongs(), "Did not fail");
-    }
-
-    @Test
     public void testGetSetArtist(){
 
         Album testSongs = new Album( "test", "test");

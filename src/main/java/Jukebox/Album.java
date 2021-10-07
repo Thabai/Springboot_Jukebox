@@ -15,14 +15,6 @@ public class Album {
         this.albumArtist = albumArtist;
     }
 
-    public String getAlbumSongs() {
-
-        for (int i = 0; i < this.albumSongs.size(); i++) {
-                return "Songs in album: " + this.albumSongs.get(i).getTrack();
-            }
-        return null;
-    }
-
     public void addAlbumSong(String track, String artist) {
         albumSongs.add(new Song(track, artist));
     }
