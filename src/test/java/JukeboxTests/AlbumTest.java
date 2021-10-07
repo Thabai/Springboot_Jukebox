@@ -15,7 +15,7 @@ public class AlbumTest {
     public void testGetSetAlbum() {
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Farmer's Daughter", "Beach Boys");
-        assertEquals("Song in album Farmer's Daughter", testSongs.getAlbumSongs(),"No album songs");
+        assertEquals("Songs in album: Farmer's Daughter", testSongs.getAlbumSongs(),"No album songs");
     }
 
     @Test

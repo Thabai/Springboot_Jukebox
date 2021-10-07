@@ -18,10 +18,8 @@ public class Album {
     public String getAlbumSongs() {
 
         for (int i = 0; i < this.albumSongs.size(); i++) {
-            if (i != 0) {
-                return "Song in album " + this.albumSongs.get(i).getTrack();
+                return "Songs in album: " + this.albumSongs.get(i).getTrack();
             }
-        }
         return null;
     }
 
