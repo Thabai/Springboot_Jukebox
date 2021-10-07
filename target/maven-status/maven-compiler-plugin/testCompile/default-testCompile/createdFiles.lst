@@ -1,4 +1,6 @@
-SongTest.class
-com\tsi\springboot\SpringbootdemoApplicationTests.class
-AlbumTest.class
-JukeboxTest.class
+JukeboxTests\RunnerTest.class
+JukeboxTests\JukeboxTest.class
+com\tsi\springboot\SpringbootdemoApplicationTest.class
+JukeboxTests\SongTest.class
+JukeboxTests\AddSongTest.class
+JukeboxTests\AlbumTest.class

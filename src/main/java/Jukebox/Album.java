@@ -18,7 +18,9 @@ public class Album {
     public String getAlbumSongs() {
 
         for (int i = 0; i < this.albumSongs.size(); i++) {
-            return "Song in album " + this.albumSongs.get(i).getTrack();
+            if (i != 0) {
+                return "Song in album " + this.albumSongs.get(i).getTrack();
+            }
         }
         return null;
     }
