@@ -56,8 +56,8 @@ public class Song {
     public String toString() {
         return
                 "{" +
-                        "\"Track Name\"= \"" + this.Track +
-                        "\", \"Artist\"=\"" + this.Artist  +
-                        "\"}";
+                        "Track Name= " + this.Track +
+                        ", Artist= " + this.Artist  +
+                        "}";
     }
 }

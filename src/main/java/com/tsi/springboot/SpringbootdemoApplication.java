@@ -3,7 +3,6 @@ package com.tsi.springboot;
 import Jukebox.MainJukebox;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,16 +26,8 @@ public class SpringbootdemoApplication {
 
 	@GetMapping("/customRoute?defaultPlaylist")
 	public String defaultPlaylist(){
+		availableAlbums();
 		MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();
-//		if (MainJukebox.Playlist.defaultPlaylist.isEmpty()) {
-//			MainJukebox albums = new MainJukebox();
-//			return albums.toString();
-//			ArrayList<Song> playlist = new ArrayList<Song>();
-//			albums.get(0).addToPlaylist("Girls Got Rhythm", playlist);
-//			albums.get(0).addToPlaylist("Touch Too Much", playlist);
-//			albums.get(1).addToPlaylist("Stoked", playlist);
-//			return playlist.toString();
-//		}
 		return defaultPlaylist.toString();
 	}
 

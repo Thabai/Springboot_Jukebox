@@ -1,6 +1,6 @@
 import Jukebox.Album;
-
 import Jukebox.Song;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class AlbumTest {
     @Test
     public void testGetSetAlbumToFail() {
         Album testSongs = new Album("Surfin USA", "Beach Boys");
-        assertNull(testSongs.getAlbumSongs(), "No album songs");
+        assertNull(testSongs.getAlbumSongs(), "Did not fail");
     }
 
     @Test
@@ -57,6 +57,6 @@ public class AlbumTest {
         testSongs.addAlbumSong("Surfin USA", "Beach Boys");
         albums.add(testSongs);
         ArrayList<Song> playlist = new ArrayList<Song>();
-        assertFalse(albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
+        assertFalse(albums.get(0).addToPlaylist("Party Rocking", playlist), "Did not fail");
     }
 }

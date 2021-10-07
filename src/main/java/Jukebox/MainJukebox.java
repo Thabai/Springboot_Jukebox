@@ -3,8 +3,8 @@ package Jukebox;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 public class MainJukebox {
 
@@ -23,13 +23,10 @@ public class MainJukebox {
         album.addAlbumSong("Misirlou", "Beach Boys");
         album.addAlbumSong("Stoked", "Beach Boys");
         albums.add(album);
-//        printListAlbum(albums);
+        printListAlbum(albums);
 
     }
 
-    public static List<Album> getAlbumsAvailable(){
-        return albums;
-    }
 
     public String toString(){
         return new Gson().toJson(albums);
@@ -42,11 +39,7 @@ public class MainJukebox {
             albums.get(0).addToPlaylist("Girls Got Rhythm", defaultPlaylist);
             albums.get(0).addToPlaylist("Touch Too Much", defaultPlaylist);
             albums.get(1).addToPlaylist("Stoked", defaultPlaylist);
-            ////        printPlaylist(playlist);
-        }
-
-        public static ArrayList<Song> getDefaultPlaylist(){
-            return defaultPlaylist;
+            printPlaylist(defaultPlaylist);
         }
 
         public String toString(){
@@ -57,36 +50,32 @@ public class MainJukebox {
 
 
 
-//    public static void printListAlbum(LinkedList<Album> linkedList) {
-//        System.out.println("= Current Albums Available =");
-//
-//        Iterator<Album> albumName = linkedList.iterator();
-//        int albumNum = 0;
-//        while (albumName.hasNext()) {
-//
-//            albumNum++;
-//            Album currentAlbum = albumName.next();
-//            System.out.println(albumNum + ": " + currentAlbum.getAlbumTitle());
-//
-//
-//        }
-//        System.out.println("= End of Albums =");
-//
-//    }
+    public static String printListAlbum(LinkedList<Album> linkedList) {
 
-//    public static void printPlaylist(LinkedList<Song> playlist) {
-//        System.out.println("= Current Playlist Songs =");
-//
-//        Iterator<Song> track = playlist.iterator();
-//        int songNum = 0;
-//        while (track.hasNext()) {
-//
-//            songNum++;
-//            Song currentSong = track.next();
-//            System.out.println(songNum + ": " + currentSong.getTrack());
-//        }
-//        System.out.println("= End of Playlist =");
-//
-//    }
+        Iterator<Album> albumName = linkedList.iterator();
+        int albumNum = 0;
+        while (albumName.hasNext()) {
+
+            albumNum++;
+            Album currentAlbum = albumName.next();
+            return "= Current Albums Available =" + albumNum + ": " + currentAlbum.getAlbumTitle();
+        }
+
+        return null;
+    }
+
+    public static String printPlaylist(ArrayList<Song> playlist) {
+
+        Iterator<Song> track = playlist.iterator();
+        int songNum = 0;
+        while (track.hasNext()) {
+
+            songNum++;
+            Song currentSong = track.next();
+            return "= Current Songs On Playlist =" + songNum + ": " + currentSong.getTrack();
+        }
+        return null;
+
+    }
 
 }
