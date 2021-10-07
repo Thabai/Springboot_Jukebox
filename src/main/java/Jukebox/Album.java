@@ -62,8 +62,29 @@ public class Album {
         return false;
     }
 
+    //cucumber
+
+    public Boolean songCucumberAvailable(String Track) {
+
+        for (Song checkedSong : this.albumSongs) {
+            if (checkedSong.getTrack().equals(Track)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean addToNewPlaylist(String Track, MainJukebox.Playlist playlist) {
+        Boolean checkedSong = songCucumberAvailable(Track);
+        if (checkedSong != false) {
+            return true;
+        }
+        return false;
+    }
+
+
     @Override
     public String toString() {
         return "{ Albums Available: [Album Name = " + this.albumTitle + ", Artist = " + this.albumArtist + ", Song List = " + this.albumSongs + "]}";
     }
+
 }

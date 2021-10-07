@@ -1,3 +1,5 @@
+package JukeboxTests;
+
 import Jukebox.Album;
 import Jukebox.Song;
 

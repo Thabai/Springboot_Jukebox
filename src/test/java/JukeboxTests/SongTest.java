@@ -1,3 +1,5 @@
+package JukeboxTests;
+
 import Jukebox.Song;
 import org.junit.jupiter.api.Test;
 
