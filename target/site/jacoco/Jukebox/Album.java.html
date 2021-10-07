@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Album.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springbootJukebox</a> &gt; <a href="index.source.html" class="el_package">Jukebox</a> &gt; <span class="el_source">Album.java</span></div><h1>Album.java</h1><pre class="source lang-java linenums">package Jukebox;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Album {
+
+<span class="fc" id="L9">    private List&lt;Song&gt; albumSongs = new LinkedList&lt;&gt;();</span>
+    private String albumTitle;
+    private String albumArtist;
+
+<span class="fc" id="L13">    public Album (String albumTitle, String albumArtist){</span>
+<span class="fc" id="L14">        this.albumTitle = albumTitle;</span>
+<span class="fc" id="L15">        this.albumArtist = albumArtist;</span>
+<span class="fc" id="L16">    }</span>
+
+    public String getAlbumSongs() {
+
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        for (int i = 0; i &lt; this.albumSongs.size(); i++) {</span>
+<span class="fc" id="L21">            return &quot;Song in album &quot; + this.albumSongs.get(i).getTrack();</span>
+        }
+<span class="fc" id="L23">        return null;</span>
+    }
+
+    public void addAlbumSong(String track, String artist) {
+<span class="fc" id="L27">        albumSongs.add(new Song(track, artist));</span>
+<span class="fc" id="L28">    }</span>
+
+    public String getAlbumTitle() {
+<span class="fc" id="L31">        return this.albumTitle;</span>
+    }
+
+    public void setAlbumTitle(String albumTitle) {
+<span class="fc" id="L35">        this.albumTitle = albumTitle;</span>
+<span class="fc" id="L36">    }</span>
+
+    public String getAlbumArtist() {
+<span class="fc" id="L39">        return this.albumArtist;</span>
+    }
+
+    public void setAlbumArtist(String albumArtist) {
+<span class="fc" id="L43">        this.albumArtist = albumArtist;</span>
+<span class="fc" id="L44">    }</span>
+
+    public Song songAvailable(String Track) {
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        for (Song checkedSong : this.albumSongs) {</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">            if (checkedSong.getTrack().equals(Track)) {</span>
+<span class="fc" id="L50">                return checkedSong;</span>
+            }
+<span class="fc" id="L52">        }</span>
+<span class="fc" id="L53">        return null;</span>
+    }
+
+    public boolean addToPlaylist(String Track, ArrayList&lt;Song&gt; playlist) {
+<span class="fc" id="L57">        Song checkedSong = songAvailable(Track);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (checkedSong != null) {</span>
+<span class="fc" id="L59">            playlist.add(checkedSong);</span>
+<span class="fc" id="L60">            return true;</span>
+        }
+<span class="fc" id="L62">        return false;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L67">        return &quot;{ Albums Available: [Album Name = &quot; + this.albumTitle + &quot;, Artist = &quot; + this.albumArtist + &quot;, Song List = &quot; + this.albumSongs + &quot;]}&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
