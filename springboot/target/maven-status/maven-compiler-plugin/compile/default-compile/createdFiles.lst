@@ -1,5 +1,5 @@
-src\main\java\com\tsi\springboot\MainJukebox$Playlist.class
-src\main\java\com\tsi\springboot\SpringbootdemoApplication.class
-src\main\java\com\tsi\springboot\Song.class
-src\main\java\com\tsi\springboot\MainJukebox.class
-src\main\java\com\tsi\springboot\Album.class
+com\tsi\springboot\MainJukebox$Playlist.class
+com\tsi\springboot\MainJukebox.class
+com\tsi\springboot\Album.class
+com\tsi\springboot\Song.class
+com\tsi\springboot\SpringbootdemoApplication.class
