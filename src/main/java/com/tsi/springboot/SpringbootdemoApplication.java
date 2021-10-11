@@ -3,9 +3,7 @@ package com.tsi.springboot;
 import Jukebox.MainJukebox;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @SpringBootApplication
@@ -18,13 +16,15 @@ public class SpringbootdemoApplication {
 
 
 	@CrossOrigin("http://localhost:3000")
-	@GetMapping("/customRoute")
+//	@RequestMapping(value="api/albums", method= RequestMethod.GET)
+	@GetMapping("/api/albums")
 	public String availableAlbums(){
 		MainJukebox albums = new MainJukebox();
 		return albums.toString();
 	}
 
-	@GetMapping("/customRoute?defaultPlaylist")
+//	@RequestMapping(value="/api/playlist", method= RequestMethod.GET)
+	@GetMapping("/api/playlist")
 	public String defaultPlaylist(){
 		availableAlbums();
 		MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();

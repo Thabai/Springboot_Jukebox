@@ -114,12 +114,6 @@
             <version>4.2.0</version>
             <scope>test</scope>
         </dependency>
-<!--        		<dependency>-->
-<!--        			<groupId>react</groupId>-->
-<!--        &lt;!&ndash;			<artifactId>cucumber-core</artifactId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<version>7.0.0-RC1</version>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<scope>test</scope>&ndash;&gt;-->
-<!--        		</dependency>-->
     </dependencies>
 
     <build>

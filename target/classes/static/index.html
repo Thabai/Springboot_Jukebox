@@ -5,12 +5,19 @@
     <title>Jukebox</title>
 </head>
 <body>
-<h1><a href="customRoute">Jukebox Albums</a></h1>
-<form action = "/customRoute" method="GET" id="Album">
+<h1><a href="api/albums">Jukebox Albums</a></h1>
+<form action = "/api/albums" method="GET" id="Album">
     <div>
         <label >View Albums?</label>
         <button>View songs</button>
     </div>
 </form>
+
+<h1><a href="api/playlist">Jukebox Playlist</a></h1>
+<form action = "/api/playlist" method="GET" id="playlist">
+    <div>
+        <label>Make a playlist?</label>
+        <button>View default playlist songs</button>
+    </div>
 </body>
 </html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainJukebox.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springbootJukebox</a> &gt; <a href="index.source.html" class="el_package">Jukebox</a> &gt; <span class="el_source">MainJukebox.java</span></div><h1>MainJukebox.java</h1><pre class="source lang-java linenums">package Jukebox;
+
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MainJukebox {
+
+<span class="fc" id="L11">    public static LinkedList&lt;Album&gt; albums = new LinkedList&lt;Album&gt;();</span>
+
+<span class="fc" id="L13">    public MainJukebox() {</span>
+
+<span class="fc" id="L15">        Album album = new Album(&quot;Highway to Hell&quot;, &quot;AC/DC&quot;);</span>
+<span class="fc" id="L16">        album.addAlbumSong(&quot;Girls Got Rhythm&quot;, &quot;AC/DC&quot;);</span>
+<span class="fc" id="L17">        album.addAlbumSong(&quot;Walk All Over You&quot;, &quot;AC/DC&quot;);</span>
+<span class="fc" id="L18">        album.addAlbumSong(&quot;Touch Too Much&quot;, &quot;AC/DC&quot;);</span>
+<span class="fc" id="L19">        albums.add(album);</span>
+
+<span class="fc" id="L21">        album = new Album(&quot;Surfin' USA&quot;, &quot;Beach Boys&quot;);</span>
+<span class="fc" id="L22">        album.addAlbumSong(&quot;Farmer's Daughter&quot;, &quot;Beach Boys&quot;);</span>
+<span class="fc" id="L23">        album.addAlbumSong(&quot;Misirlou&quot;, &quot;Beach Boys&quot;);</span>
+<span class="fc" id="L24">        album.addAlbumSong(&quot;Stoked&quot;, &quot;Beach Boys&quot;);</span>
+<span class="fc" id="L25">        albums.add(album);</span>
+<span class="fc" id="L26">        printListAlbum(albums);</span>
+
+<span class="fc" id="L28">    }</span>
+
+
+    public String toString(){
+<span class="fc" id="L32">        return new Gson().toJson(albums);</span>
+    }
+
+    public static class Playlist{
+<span class="fc" id="L36">        public static ArrayList&lt;Song&gt; defaultPlaylist = new ArrayList&lt;Song&gt;();</span>
+
+<span class="fc" id="L38">        public Playlist() {</span>
+<span class="fc" id="L39">            albums.get(0).addToPlaylist(&quot;Girls Got Rhythm&quot;, defaultPlaylist);</span>
+<span class="fc" id="L40">            albums.get(0).addToPlaylist(&quot;Touch Too Much&quot;, defaultPlaylist);</span>
+<span class="fc" id="L41">            albums.get(1).addToPlaylist(&quot;Stoked&quot;, defaultPlaylist);</span>
+<span class="fc" id="L42">            printPlaylist(defaultPlaylist);</span>
+<span class="fc" id="L43">        }</span>
+
+        public String toString(){
+<span class="fc" id="L46">            return new Gson().toJson(defaultPlaylist);</span>
+        }
+
+    }
+
+
+
+    public static String printListAlbum(LinkedList&lt;Album&gt; linkedList) {
+
+<span class="fc" id="L55">        Iterator&lt;Album&gt; albumName = linkedList.iterator();</span>
+<span class="fc" id="L56">        int albumNum = 0;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        while (albumName.hasNext()) {</span>
+
+<span class="fc" id="L59">            albumNum++;</span>
+<span class="fc" id="L60">            Album currentAlbum = albumName.next();</span>
+<span class="fc" id="L61">            return &quot;= Current Albums Available =&quot; + albumNum + &quot;: &quot; + currentAlbum.getAlbumTitle();</span>
+        }
+
+<span class="fc" id="L64">        return null;</span>
+    }
+
+    public static String printPlaylist(ArrayList&lt;Song&gt; playlist) {
+
+<span class="fc" id="L69">        Iterator&lt;Song&gt; track = playlist.iterator();</span>
+<span class="fc" id="L70">        int songNum = 0;</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        while (track.hasNext()) {</span>
+
+<span class="fc" id="L73">            songNum++;</span>
+<span class="fc" id="L74">            Song currentSong = track.next();</span>
+<span class="fc" id="L75">            return &quot;= Current Songs On Playlist =&quot; + songNum + &quot;: &quot; + currentSong.getTrack();</span>
+        }
+<span class="fc" id="L77">        return null;</span>
+
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
