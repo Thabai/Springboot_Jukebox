@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function Albums(){
+const Albums = () => {
  const [album, setAlbum] = useState([]);
   const [error, setError] = useState({ error: false, message: "" });
   const [loading, setLoading] = useState(true);
@@ -38,4 +38,4 @@ return (
     );
     }
 
-    export default Albums;
+export default Albums;

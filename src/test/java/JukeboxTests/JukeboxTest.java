@@ -73,7 +73,7 @@ public class JukeboxTest {
     @Test
     void availableAlbumsTest() {
         MainJukebox albums = new MainJukebox();
-        assertEquals("[{\"albumSongs\":[{\"Track\":\"Girls Got Rhythm\",\"Artist\":\"AC/DC\",\"Playing\":false},{\"Track\":\"Walk All Over You\",\"Artist\":\"AC/DC\",\"Playing\":false},{\"Track\":\"Touch Too Much\",\"Artist\":\"AC/DC\",\"Playing\":false}],\"albumTitle\":\"Highway to Hell\",\"albumArtist\":\"AC/DC\"},{\"albumSongs\":[{\"Track\":\"Farmer\\u0027s Daughter\",\"Artist\":\"Beach Boys\",\"Playing\":false},{\"Track\":\"Misirlou\",\"Artist\":\"Beach Boys\",\"Playing\":false},{\"Track\":\"Stoked\",\"Artist\":\"Beach Boys\",\"Playing\":false}],\"albumTitle\":\"Surfin\\u0027 USA\",\"albumArtist\":\"Beach Boys\"}]",
+        assertEquals("[{\"albumSongs\":[{\"songTrack\":\"Girls Got Rhythm\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Walk All Over You\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Touch Too Much\",\"songArtist\":\"AC/DC\",\"songPlaying\":false}],\"albumTitle\":\"Highway to Hell\",\"albumArtist\":\"AC/DC\"},{\"albumSongs\":[{\"songTrack\":\"Farmer\\u0027s Daughter\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false},{\"songTrack\":\"Misirlou\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false},{\"songTrack\":\"Stoked\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false}],\"albumTitle\":\"Surfin\\u0027 USA\",\"albumArtist\":\"Beach Boys\"}]",
                 albums.toString(),
                 "No songs");
     }
@@ -82,6 +82,6 @@ public class JukeboxTest {
     @Test
     void defaultPlaylistTest() {
         MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();
-        assertEquals("[{\"Track\":\"Girls Got Rhythm\",\"Artist\":\"AC/DC\",\"Playing\":false},{\"Track\":\"Touch Too Much\",\"Artist\":\"AC/DC\",\"Playing\":false},{\"Track\":\"Stoked\",\"Artist\":\"Beach Boys\",\"Playing\":false}]", defaultPlaylist.toString(), "No songs");
+        assertEquals("[{\"songTrack\":\"Girls Got Rhythm\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Touch Too Much\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Stoked\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false}]", defaultPlaylist.toString(), "No songs");
     }
 }

@@ -11,16 +11,16 @@ public class SongTest {
     @Test
     public void testGetSetTrack(){
         Song testSong = new Song("Testy", "Testy");
-        testSong.setTrack("Surfin USA");
-        assertEquals("Surfin USA", testSong.getTrack(),"No Title");
+        testSong.setSongTrack("Surfin USA");
+        assertEquals("Surfin USA", testSong.getSongTrack(),"No Title");
     }
 
 
     @Test
     public void testGetSetArtist(){
         Song testSong = new Song("Testy", "Testy");
-        testSong.setArtist("Beach Boys");
-        assertEquals("Beach Boys", testSong.getArtist(),"No Artist");
+        testSong.setSongArtist("Beach Boys");
+        assertEquals("Beach Boys", testSong.getSongArtist(),"No Artist");
     }
 
     @Test
@@ -36,6 +36,6 @@ public class SongTest {
         Song testSong = new Song();
         testSong.setSong("Surfin USA", "Beach Boys");
         testSong.play();
-        assertTrue(testSong.getPlaying(), "Nothing playing");
+        assertTrue(testSong.getSongPlaying(), "Nothing playing");
     }
 }

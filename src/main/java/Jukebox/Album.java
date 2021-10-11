@@ -1,6 +1,5 @@
 package Jukebox;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,18 +34,18 @@ public class Album {
         this.albumArtist = albumArtist;
     }
 
-    public Song songAvailable(String Track) {
+    public Song songAvailable(String track) {
 
         for (Song checkedSong : this.albumSongs) {
-            if (checkedSong.getTrack().equals(Track)) {
+            if (checkedSong.getSongTrack().equals(track)) {
                 return checkedSong;
             }
         }
         return null;
     }
 
-    public boolean addToPlaylist(String Track, ArrayList<Song> playlist) {
-        Song checkedSong = songAvailable(Track);
+    public boolean addToPlaylist(String track, List<Song> playlist) {
+        Song checkedSong = songAvailable(track);
         if (checkedSong != null) {
             playlist.add(checkedSong);
             return true;
@@ -56,17 +55,17 @@ public class Album {
 
     //cucumber
 
-    public Boolean songCucumberAvailable(String Track) {
+    public Boolean songCucumberAvailable(String track) {
 
         for (Song checkedSong : this.albumSongs) {
-            if (checkedSong.getTrack().equals(Track)) {
+            if (checkedSong.getSongTrack().equals(track)) {
                 return true;
             }
         }
         return false;
     }
-    public boolean addToNewPlaylist(String Track, MainJukebox.Playlist playlist) {
-        Boolean checkedSong = songCucumberAvailable(Track);
+    public boolean addToNewPlaylist(String track, MainJukebox.Playlist playlist) {
+        Boolean checkedSong = songCucumberAvailable(track);
         if (checkedSong != false) {
             return true;
         }

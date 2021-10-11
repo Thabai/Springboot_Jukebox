@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Song.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springbootJukebox</a> &gt; <a href="index.source.html" class="el_package">Jukebox</a> &gt; <span class="el_source">Song.java</span></div><h1>Song.java</h1><pre class="source lang-java linenums">package Jukebox;
 
 public class Song {
-    private String Track;
-    private String Artist;
-<span class="fc" id="L6">    private boolean Playing = false;</span>
+    private String songTrack;
+    private String songArtist;
+<span class="fc" id="L6">    private boolean songPlaying = false;</span>
 
     public Song() {
 <span class="fc" id="L9">        this(&quot;test&quot;);</span>
@@ -13,51 +13,51 @@ public class Song {
 <span class="fc" id="L13">        this(&quot;test&quot;, &quot;tester&quot;);</span>
 <span class="fc" id="L14">    }</span>
 
-    public Song(String Track, String Artist) {
+    public Song(String track, String artist) {
 <span class="fc" id="L17">        super();</span>
-<span class="fc" id="L18">        this.Track = Track;</span>
-<span class="fc" id="L19">        this.Artist = Artist;</span>
+<span class="fc" id="L18">        this.songTrack = track;</span>
+<span class="fc" id="L19">        this.songArtist = artist;</span>
 <span class="fc" id="L20">    }</span>
 
-    public String getTrack() {
-<span class="fc" id="L23">        return Track;</span>
+    public String getSongTrack() {
+<span class="fc" id="L23">        return songTrack;</span>
     }
 
-    public void setTrack(String track) {
-<span class="fc" id="L27">        this.Track = track;</span>
+    public void setSongTrack(String songTrack) {
+<span class="fc" id="L27">        this.songTrack = songTrack;</span>
 <span class="fc" id="L28">    }</span>
 
-    public String getArtist() {
-<span class="fc" id="L31">        return Artist;</span>
+    public String getSongArtist() {
+<span class="fc" id="L31">        return songArtist;</span>
     }
 
-    public void setArtist(String artist) {
-<span class="fc" id="L35">        this.Artist = artist;</span>
+    public void setSongArtist(String songArtist) {
+<span class="fc" id="L35">        this.songArtist = songArtist;</span>
 <span class="fc" id="L36">    }</span>
 
     public void setSong(String track, String artist) {
-<span class="fc" id="L39">        this.Track = track;</span>
-<span class="fc" id="L40">        this.Artist = artist;</span>
+<span class="fc" id="L39">        this.songTrack = track;</span>
+<span class="fc" id="L40">        this.songArtist = artist;</span>
 <span class="fc" id="L41">    }</span>
 
     public String getSong() {
-<span class="fc" id="L44">        return &quot;Now playing &quot; + this.Track + &quot; by the &quot; + this.Artist;</span>
+<span class="fc" id="L44">        return &quot;Now playing &quot; + this.songTrack + &quot; by the &quot; + this.songArtist;</span>
     }
 
     public void play() {
-<span class="fc" id="L48">        Playing = true;</span>
+<span class="fc" id="L48">        songPlaying = true;</span>
 <span class="fc" id="L49">    }</span>
 
-    public boolean getPlaying() {
-<span class="fc" id="L52">        return Playing;</span>
+    public boolean getSongPlaying() {
+<span class="fc" id="L52">        return songPlaying;</span>
     }
 
     @Override
     public String toString() {
 <span class="fc" id="L57">        return</span>
                 &quot;{&quot; +
-                        &quot;Track Name= &quot; + this.Track +
-                        &quot;, Artist= &quot; + this.Artist  +
+                        &quot;Track Name= &quot; + this.songTrack +
+                        &quot;, Artist= &quot; + this.songArtist +
                         &quot;}&quot;;
     }
 }

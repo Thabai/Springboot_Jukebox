@@ -1,9 +1,9 @@
 package Jukebox;
 
 public class Song {
-    private String Track;
-    private String Artist;
-    private boolean Playing = false;
+    private String songTrack;
+    private String songArtist;
+    private boolean songPlaying = false;
 
     public Song() {
         this("test");
@@ -13,51 +13,51 @@ public class Song {
         this("test", "tester");
     }
 
-    public Song(String Track, String Artist) {
+    public Song(String track, String artist) {
         super();
-        this.Track = Track;
-        this.Artist = Artist;
+        this.songTrack = track;
+        this.songArtist = artist;
     }
 
-    public String getTrack() {
-        return Track;
+    public String getSongTrack() {
+        return songTrack;
     }
 
-    public void setTrack(String track) {
-        this.Track = track;
+    public void setSongTrack(String songTrack) {
+        this.songTrack = songTrack;
     }
 
-    public String getArtist() {
-        return Artist;
+    public String getSongArtist() {
+        return songArtist;
     }
 
-    public void setArtist(String artist) {
-        this.Artist = artist;
+    public void setSongArtist(String songArtist) {
+        this.songArtist = songArtist;
     }
 
     public void setSong(String track, String artist) {
-        this.Track = track;
-        this.Artist = artist;
+        this.songTrack = track;
+        this.songArtist = artist;
     }
 
     public String getSong() {
-        return "Now playing " + this.Track + " by the " + this.Artist;
+        return "Now playing " + this.songTrack + " by the " + this.songArtist;
     }
 
     public void play() {
-        Playing = true;
+        songPlaying = true;
     }
 
-    public boolean getPlaying() {
-        return Playing;
+    public boolean getSongPlaying() {
+        return songPlaying;
     }
 
     @Override
     public String toString() {
         return
                 "{" +
-                        "Track Name= " + this.Track +
-                        ", Artist= " + this.Artist  +
+                        "Track Name= " + this.songTrack +
+                        ", Artist= " + this.songArtist +
                         "}";
     }
 }

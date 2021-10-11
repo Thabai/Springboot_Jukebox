@@ -72,7 +72,7 @@ public class MainJukebox {
 
             songNum++;
             Song currentSong = track.next();
-            return "= Current Songs On Playlist =" + songNum + ": " + currentSong.getTrack();
+            return "= Current Songs On Playlist =" + songNum + ": " + currentSong.getSongTrack();
         }
         return null;
 
