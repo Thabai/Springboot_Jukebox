@@ -5,10 +5,11 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class MainJukebox {
 
-    public static LinkedList<Album> albums = new LinkedList<Album>();
+    public static List<Album> albums = new LinkedList<Album>();
 
     public MainJukebox() {
 
@@ -33,7 +34,7 @@ public class MainJukebox {
     }
 
     public static class Playlist{
-        public static ArrayList<Song> defaultPlaylist = new ArrayList<Song>();
+        public static List<Song> defaultPlaylist = new ArrayList<Song>();
 
         public Playlist() {
             albums.get(0).addToPlaylist("Girls Got Rhythm", defaultPlaylist);
@@ -50,7 +51,7 @@ public class MainJukebox {
 
 
 
-    public static String printListAlbum(LinkedList<Album> linkedList) {
+    public static String printListAlbum(List<Album> linkedList) {
 
         Iterator<Album> albumName = linkedList.iterator();
         int albumNum = 0;
@@ -64,7 +65,7 @@ public class MainJukebox {
         return null;
     }
 
-    public static String printPlaylist(ArrayList<Song> playlist) {
+    public static String printPlaylist(List<Song> playlist) {
 
         Iterator<Song> track = playlist.iterator();
         int songNum = 0;
