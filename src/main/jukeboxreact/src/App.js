@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Albums from './Albums.js';
+import Albums from './Components/Albums.js';
 
 const App = () => {
+
 
  return (
  <div>

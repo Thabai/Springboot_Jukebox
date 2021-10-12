@@ -16,14 +16,14 @@ public class SpringbootdemoApplication {
 
 
 	@CrossOrigin("http://localhost:3000")
-//	@RequestMapping(value="api/albums", method= RequestMethod.GET)
+	@RequestMapping(value="api/albums", method= RequestMethod.GET)
 	@GetMapping("/api/albums")
 	public String availableAlbums(){
 		MainJukebox albums = new MainJukebox();
 		return albums.toString();
 	}
 
-//	@RequestMapping(value="/api/playlist", method= RequestMethod.GET)
+	@RequestMapping(value="/api/playlist", method= RequestMethod.GET)
 	@GetMapping("/api/playlist")
 	public String defaultPlaylist(){
 		availableAlbums();

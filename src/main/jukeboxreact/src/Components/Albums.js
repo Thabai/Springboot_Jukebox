@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import AlbumSongs from './AlbumSongs.js';
+import '../App.css';
 
 const Albums = () => {
  const [album, setAlbum] = useState([]);
@@ -8,7 +9,7 @@ const Albums = () => {
 
    const handleFetch = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/albums');
+        const response = await fetch(`${process.env.REACT_APP_REST_API}api/albums`);
         if (response.status !== 200) {
                 throw new error("oops");
               }
@@ -25,16 +26,18 @@ const Albums = () => {
  handleFetch();
   }, []);
 
+  console.log(album);
+
 return (
         <div>
             <h1>Albums Available on Jukebox</h1>
-            {album.map((data) => {
-                return <div>
-
-                 <p>{data.albumTitle}</p>
+            {album.map((data, index) => {
+                return <div className="album_container" key={index}>
+                <h2>Album Title: {data.albumTitle}</h2>
+                <AlbumSongs albumSongs={data.albumSongs} />
                 </div>;
             })}
-        </div>
+       </div>
     );
     }
 
