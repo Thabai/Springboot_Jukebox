@@ -14,6 +14,11 @@ public class SpringbootdemoApplication {
 		SpringApplication.run(SpringbootdemoApplication.class, args);
 	}
 
+//	@Bean
+//	public WebDriver webDriver() {
+//		return new FirefoxDriver();
+//		//OR return new ChromeDriver();
+//	}
 
 	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(value="api/albums", method= RequestMethod.GET)

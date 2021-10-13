@@ -65,8 +65,8 @@ public class Album {
         return false;
     }
     public boolean addToNewPlaylist(String track, MainJukebox.Playlist playlist) {
-        Boolean checkedSong = songCucumberAvailable(track);
-        if (checkedSong != false) {
+        Boolean checkingSong = songCucumberAvailable(track);
+        if (checkingSong) {
             return true;
         }
         return false;

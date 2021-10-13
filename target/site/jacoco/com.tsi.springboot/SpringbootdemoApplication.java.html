@@ -14,21 +14,26 @@ import org.springframework.web.bind.annotation.*;
 <span class="nc" id="L14">		SpringApplication.run(SpringbootdemoApplication.class, args);</span>
 <span class="nc" id="L15">	}</span>
 
+//	@Bean
+//	public WebDriver webDriver() {
+//		return new FirefoxDriver();
+//		//OR return new ChromeDriver();
+//	}
 
 	@CrossOrigin(&quot;http://localhost:3000&quot;)
-//	@RequestMapping(value=&quot;api/albums&quot;, method= RequestMethod.GET)
+	@RequestMapping(value=&quot;api/albums&quot;, method= RequestMethod.GET)
 	@GetMapping(&quot;/api/albums&quot;)
 	public String availableAlbums(){
-<span class="nc" id="L22">		MainJukebox albums = new MainJukebox();</span>
-<span class="nc" id="L23">		return albums.toString();</span>
+<span class="nc" id="L27">		MainJukebox albums = new MainJukebox();</span>
+<span class="nc" id="L28">		return albums.toString();</span>
 	}
 
-//	@RequestMapping(value=&quot;/api/playlist&quot;, method= RequestMethod.GET)
+	@RequestMapping(value=&quot;/api/playlist&quot;, method= RequestMethod.GET)
 	@GetMapping(&quot;/api/playlist&quot;)
 	public String defaultPlaylist(){
-<span class="nc" id="L29">		availableAlbums();</span>
-<span class="nc" id="L30">		MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();</span>
-<span class="nc" id="L31">		return defaultPlaylist.toString();</span>
+<span class="nc" id="L34">		availableAlbums();</span>
+<span class="nc" id="L35">		MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();</span>
+<span class="nc" id="L36">		return defaultPlaylist.toString();</span>
 	}
 
 

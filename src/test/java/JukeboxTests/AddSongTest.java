@@ -15,14 +15,14 @@ public class AddSongTest {
     static String checkSong (String songAvailable) {
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Farmer's Daughter", "Beach Boys");
-        return  testSongs.songCucumberAvailable(songAvailable) ? "Yes" : "No";
+        return testSongs.songCucumberAvailable(songAvailable) ? "Yes" : "No";
     }
 
     static String addSongToPlaylist (String songAvailable) {
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Farmer's Daughter", "Beach Boys");
         MainJukebox.Playlist playlist = new MainJukebox.Playlist();
-        return  testSongs.addToNewPlaylist(songAvailable, playlist) ? "Added to playlist" : "Not Added to playlist";
+        return testSongs.addToNewPlaylist(songAvailable, playlist) ? "Added to playlist" : "Not Added to playlist";
     }
 
     @Given("the song is available")

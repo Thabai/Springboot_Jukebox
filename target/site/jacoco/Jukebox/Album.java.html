@@ -65,8 +65,8 @@ public class Album {
 <span class="fc" id="L65">        return false;</span>
     }
     public boolean addToNewPlaylist(String track, MainJukebox.Playlist playlist) {
-<span class="fc" id="L68">        Boolean checkedSong = songCucumberAvailable(track);</span>
-<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (checkedSong != false) {</span>
+<span class="fc" id="L68">        Boolean checkingSong = songCucumberAvailable(track);</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (checkingSong) {</span>
 <span class="fc" id="L70">            return true;</span>
         }
 <span class="fc" id="L72">        return false;</span>
