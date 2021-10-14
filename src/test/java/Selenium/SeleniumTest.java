@@ -8,9 +8,10 @@ public class SeleniumTest {
 
 
     public static void main(String[] args) throws InterruptedException {
+
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\carly\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("process.env.SELENIUM_URI");
+        driver.get("http://localhost:8080/");
         driver.manage().window();
         Thread.sleep(2000);
 
@@ -27,7 +28,18 @@ public class SeleniumTest {
         if(driver.getCurrentUrl().equals("http://localhost:8080/api/playlist")){
             System.out.println("Find jukebox default playlist passed");
         } else {
-            System.out.println("Find jukebox default playlist  failed");
+            System.out.println("Find jukebox default playlist failed");
         }
+        Thread.sleep(2000);
+        driver.navigate().back();
+        Thread.sleep(2000);
+        driver.findElement(By.id("songTrack")).sendKeys("Girls Got Rhythm");
+        driver.findElement(By.xpath("//button[contains(text(), 'Search for Song')]")).click();
+        if (driver.getCurrentUrl().equals("http://localhost:8080/api/trackSearch?songTrack=Girls+Got+Rhythm")) {
+            System.out.println("Search for track passed");
+        } else {
+            System.out.println("Search for track failed");
+        }
+        driver.close();
     }
 }
