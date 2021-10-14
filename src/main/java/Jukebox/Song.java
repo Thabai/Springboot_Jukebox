@@ -6,12 +6,8 @@ public class Song {
     private boolean songPlaying = false;
 
     public Song() {
-        this("test");
     }
 
-    public Song(String track) {
-        this("test", "tester");
-    }
 
     public Song(String track, String artist) {
         super();

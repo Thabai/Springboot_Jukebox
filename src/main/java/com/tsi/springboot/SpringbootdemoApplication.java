@@ -14,12 +14,6 @@ public class SpringbootdemoApplication {
 		SpringApplication.run(SpringbootdemoApplication.class, args);
 	}
 
-//	@Bean
-//	public WebDriver webDriver() {
-//		return new FirefoxDriver();
-//		//OR return new ChromeDriver();
-//	}
-
 	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(value="api/albums", method= RequestMethod.GET)
 	@GetMapping("/api/albums")
@@ -36,8 +30,13 @@ public class SpringbootdemoApplication {
 		return defaultPlaylist.toString();
 	}
 
-
-
+	@RequestMapping(value="/api/trackSearch", method= RequestMethod.GET)
+	@GetMapping("/api/trackSearch")
+	public String songTrackSearch(String songTrack) {
+		System.out.println(songTrack);
+		MainJukebox albums = new MainJukebox();
+		return albums.trackAvailable(songTrack);
+	}
 
 
 

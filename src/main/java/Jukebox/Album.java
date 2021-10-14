@@ -41,12 +41,12 @@ public class Album {
                 return checkedSong;
             }
         }
-        return null;
+        return new Song();
     }
 
     public boolean addToPlaylist(String track, List<Song> playlist) {
         Song checkedSong = songAvailable(track);
-        if (checkedSong != null) {
+        if (checkedSong.getSongTrack() != null) {
             playlist.add(checkedSong);
             return true;
         }
@@ -72,10 +72,12 @@ public class Album {
         return false;
     }
 
-
     @Override
     public String toString() {
-        return "{ Albums Available: [Album Name = " + this.albumTitle + ", Artist = " + this.albumArtist + ", Song List = " + this.albumSongs + "]}";
+        return "{ Albums Available: " +
+                "[Album Name = " + this.albumTitle +
+                ", Artist = " + this.albumArtist +
+                ", Song List = " + this.albumSongs + "]}";
     }
 
 }

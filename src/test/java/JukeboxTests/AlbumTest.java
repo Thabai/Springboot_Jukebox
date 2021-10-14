@@ -5,7 +5,7 @@ import Jukebox.Song;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,22 +30,21 @@ public class AlbumTest {
 
     @Test
     public void testGetPlaylist(){
-        ArrayList<Album> albums = new ArrayList<>();
+        LinkedList<Album> albums = new LinkedList<>();
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Party Rocking", "LMFAO");
         albums.add(testSongs);
-        ArrayList<Song> playlist = new ArrayList<Song>();
+        LinkedList<Song> playlist = new LinkedList<Song>();
         assertTrue(albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
     }
 
-
     @Test
-    public void testGetPlaylistToFail(){
-        ArrayList<Album> albums = new ArrayList<>();
+    public void testGetPlaylistFail(){
+        LinkedList<Album> albums = new LinkedList<>();
         Album testSongs = new Album("Surfin USA", "Beach Boys");
-        testSongs.addAlbumSong("Surfin USA", "Beach Boys");
+        testSongs.addAlbumSong("Party Rocking", "LMFAO");
         albums.add(testSongs);
-        ArrayList<Song> playlist = new ArrayList<Song>();
-        assertFalse(albums.get(0).addToPlaylist("Party Rocking", playlist), "Did not fail");
+        LinkedList<Song> playlist = new LinkedList<Song>();
+        assertFalse(albums.get(0).addToPlaylist("Party123", playlist), "Song not found");
     }
 }

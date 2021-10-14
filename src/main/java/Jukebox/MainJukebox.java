@@ -2,10 +2,7 @@ package Jukebox;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class MainJukebox {
 
@@ -19,8 +16,8 @@ public class MainJukebox {
         album.addAlbumSong("Touch Too Much", "AC/DC");
         albums.add(album);
 
-        album = new Album("Surfin' USA", "Beach Boys");
-        album.addAlbumSong("Farmer's Daughter", "Beach Boys");
+        album = new Album("Surfin USA", "Beach Boys");
+        album.addAlbumSong("Farmers Daughter", "Beach Boys");
         album.addAlbumSong("Misirlou", "Beach Boys");
         album.addAlbumSong("Stoked", "Beach Boys");
         albums.add(album);
@@ -28,6 +25,18 @@ public class MainJukebox {
 
     }
 
+    public static List<Album> getAlbums() {
+        return albums;
+    }
+
+    public String trackAvailable(String track) {
+        for (Album checkedAlbum : getAlbums()) {
+            if (checkedAlbum.songAvailable(track).getSongTrack() != null) {
+                return checkedAlbum.songAvailable(track).toString();
+            }
+        }
+        return "Sorry song is not available";
+    }
 
     public String toString(){
         return new Gson().toJson(albums);
@@ -48,6 +57,7 @@ public class MainJukebox {
         }
 
     }
+
 
 
 
