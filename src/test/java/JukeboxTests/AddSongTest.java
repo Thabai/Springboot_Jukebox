@@ -22,7 +22,7 @@ public class AddSongTest {
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Farmer's Daughter", "Beach Boys");
         MainJukebox.Playlist playlist = new MainJukebox.Playlist();
-        return testSongs.addToNewPlaylist(songAvailable, playlist) ? "Added to playlist" : "Not Added to playlist";
+        return testSongs.addToNewPlaylist(songAvailable) ? "Added to playlist" : "Not Added to playlist";
     }
 
     @Given("the song is available")

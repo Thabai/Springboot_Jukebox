@@ -9,10 +9,10 @@ import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AlbumTest {
+class AlbumTest {
 
     @Test
-    public void testGetSetArtist(){
+    void testGetSetArtist(){
 
         Album testSongs = new Album( "test", "test");
         testSongs.setAlbumArtist("Beach Boys");
@@ -21,7 +21,7 @@ public class AlbumTest {
 
 
     @Test
-    public void testGetSetTitle(){
+    void testGetSetTitle(){
 
         Album testSongs = new Album("test", "test");
         testSongs.setAlbumTitle("Surfin USA");
@@ -29,7 +29,7 @@ public class AlbumTest {
     }
 
     @Test
-    public void testGetPlaylist(){
+    void testGetPlaylist(){
         LinkedList<Album> albums = new LinkedList<>();
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Party Rocking", "LMFAO");
@@ -39,7 +39,7 @@ public class AlbumTest {
     }
 
     @Test
-    public void testGetPlaylistFail(){
+    void testGetPlaylistFail(){
         LinkedList<Album> albums = new LinkedList<>();
         Album testSongs = new Album("Surfin USA", "Beach Boys");
         testSongs.addAlbumSong("Party Rocking", "LMFAO");

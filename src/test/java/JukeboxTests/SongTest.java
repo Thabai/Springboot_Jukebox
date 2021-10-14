@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SongTest {
+class SongTest {
 
     @Test
-    public void testGetSetTrack(){
+    void testGetSetTrack(){
         Song testSong = new Song("Testy", "Testy");
         testSong.setSongTrack("Surfin USA");
         assertEquals("Surfin USA", testSong.getSongTrack(),"No Title");
@@ -17,14 +17,14 @@ public class SongTest {
 
 
     @Test
-    public void testGetSetArtist(){
+    void testGetSetArtist(){
         Song testSong = new Song("Testy", "Testy");
         testSong.setSongArtist("Beach Boys");
         assertEquals("Beach Boys", testSong.getSongArtist(),"No Artist");
     }
 
     @Test
-    public void testGetSetSong(){
+    void testGetSetSong(){
         Song testSong = new Song();
         testSong.setSong("Surfin USA", "Beach Boys");
         testSong.play();
@@ -32,7 +32,7 @@ public class SongTest {
     }
 
     @Test
-    public void testGetSetPlaying(){
+    void testGetSetPlaying(){
         Song testSong = new Song();
         testSong.setSong("Surfin USA", "Beach Boys");
         testSong.play();

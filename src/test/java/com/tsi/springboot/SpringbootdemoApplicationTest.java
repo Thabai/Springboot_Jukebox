@@ -10,22 +10,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SpringbootdemoApplicationTest {
 
     @Test
-    public void contextLoads() {
+    void contextLoads() {
     }
 
     @Test
-    public void defaultPlaylistTest() {
+    void defaultPlaylistTest() {
         assertEquals("[{\"songTrack\":\"Girls Got Rhythm\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Touch Too Much\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Stoked\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false}]",
                 SpringbootdemoApplication.defaultPlaylist(), "No playlist found");
     }
 
     @Test
-    public void trackSearchTest() {
+    void trackSearchTest() {
         assertEquals("{Track Name= Stoked, Artist= Beach Boys}", songTrackSearch("Stoked"), "Not found in albums");
     }
 
     @Test
-    public void trackSearchFailTest() {
+    void trackSearchFailTest() {
         assertEquals("Sorry song is not available", songTrackSearch("Party 123"), "Failed to check albums");
     }
 

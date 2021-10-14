@@ -13,7 +13,6 @@ public class SeleniumTest {
         WebDriver driver = new ChromeDriver();
         driver.get("http://localhost:8080/");
         driver.manage().window();
-        Thread.sleep(2000);
 
         driver.findElement(By.linkText("Jukebox Albums")).click();
         if(driver.getCurrentUrl().equals("http://localhost:8080/api/albums")){
@@ -21,18 +20,16 @@ public class SeleniumTest {
         } else {
             System.out.println("Find jukebox albums failed");
         }
-        Thread.sleep(2000);
         driver.navigate().back();
-        Thread.sleep(2000);
+
         driver.findElement(By.linkText("Jukebox Playlist")).click();
         if(driver.getCurrentUrl().equals("http://localhost:8080/api/playlist")){
             System.out.println("Find jukebox default playlist passed");
         } else {
             System.out.println("Find jukebox default playlist failed");
         }
-        Thread.sleep(2000);
         driver.navigate().back();
-        Thread.sleep(2000);
+
         driver.findElement(By.id("songTrack")).sendKeys("Girls Got Rhythm");
         driver.findElement(By.xpath("//button[contains(text(), 'Search for Song')]")).click();
         if (driver.getCurrentUrl().equals("http://localhost:8080/api/trackSearch?songTrack=Girls+Got+Rhythm")) {

@@ -12,10 +12,10 @@ import static Jukebox.MainJukebox.printPlaylist;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class JukeboxTest {
+class JukeboxTest {
 
     @Test
-    public void printAlbum() {
+    void printAlbum() {
         LinkedList<Album> albumTest = new LinkedList<>();
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
@@ -24,13 +24,13 @@ public class JukeboxTest {
     }
 
     @Test
-    public void printAlbumToFail() {
+    void printAlbumToFail() {
         LinkedList<Album> albumTest = new LinkedList<>();
         assertNull(printListAlbum(albumTest), "Did not fail");
     }
 
     @Test
-    public void printPlaylistSongs() {
+    void printPlaylistSongs() {
         LinkedList<Album> albumTest = new LinkedList<>();
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
@@ -42,13 +42,13 @@ public class JukeboxTest {
     }
 
     @Test
-    public void printPlaylistSongsToFail() {
+    void printPlaylistSongsToFail() {
         ArrayList<Song> playlist = new ArrayList<Song>();
         assertNull(printPlaylist(playlist), "Did not fail");
     }
 
     @Test
-    public void availableAlbumsToStringTest(){
+    void availableAlbumsToStringTest(){
         LinkedList<Album> albumTest = new LinkedList<>();
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
@@ -57,7 +57,7 @@ public class JukeboxTest {
     }
 
     @Test
-    public void defaultPlaylistToStringTest(){
+    void defaultPlaylistToStringTest(){
         LinkedList<Album> albumTest = new LinkedList<>();
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");

@@ -17,39 +17,23 @@ import static Jukebox.MainJukebox.*;
 <span class="nc" id="L17">	}</span>
 
 	@CrossOrigin(&quot;http://localhost:3000&quot;)
-	@RequestMapping(value=&quot;api/albums&quot;, method= RequestMethod.GET)
 	@GetMapping(&quot;/api/albums&quot;)
-	public static String availableAlbums(){
-<span class="fc" id="L23">		MainJukebox albums = new MainJukebox();</span>
-<span class="fc" id="L24">		return albums.toString();</span>
+	public static String availableAlbums() {
+<span class="fc" id="L22">		MainJukebox albums = new MainJukebox();</span>
+<span class="fc" id="L23">		return albums.toString();</span>
 	}
 
-	@RequestMapping(value=&quot;/api/playlist&quot;, method= RequestMethod.GET)
 	@GetMapping(&quot;/api/playlist&quot;)
-	public static String defaultPlaylist(){
-<span class="fc" id="L30">		availableAlbums();</span>
-<span class="fc" id="L31">		Playlist defaultPlaylist = new Playlist();</span>
-<span class="fc" id="L32">		return defaultPlaylist.toString();</span>
+	public static String defaultPlaylist() {
+<span class="fc" id="L28">		availableAlbums();</span>
+<span class="fc" id="L29">		Playlist defaultPlaylist = new Playlist();</span>
+<span class="fc" id="L30">		return defaultPlaylist.toString();</span>
 	}
 
-	@RequestMapping(value=&quot;/api/trackSearch&quot;, method= RequestMethod.GET)
 	@GetMapping(&quot;/api/trackSearch&quot;)
 	public static String songTrackSearch(String songTrack) {
-<span class="fc" id="L38">		MainJukebox albums = new MainJukebox();</span>
-<span class="fc" id="L39">		return albums.trackAvailable(songTrack);</span>
+<span class="fc" id="L35">		MainJukebox albums = new MainJukebox();</span>
+<span class="fc" id="L36">		return albums.trackAvailable(songTrack);</span>
 	}
-
-
-
-//	@PostMapping(&quot;/savePlayerDetails&quot;)
-//	public String savePlayerDetails(@RequestParam(&quot;playerId&quot;) String theInt,
-//									@ModelAttribute(&quot;details&quot;) PlayerDetails playerDetails){
-//
-//		int theInt2 = Integer.parseInt(theInt);
-//
-//		playerDetailsService.savePlayerDetails(theInt2, playerDetails);
-//
-//		return &quot;redirect:/players/list&quot;;
-//	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
