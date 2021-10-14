@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MainJukebox {
 
-    public static final List<Album> albums = new LinkedList<>();
+    protected static final List<Album> albums = new LinkedList<>();
 
     public MainJukebox() {
 
@@ -43,7 +43,7 @@ public class MainJukebox {
     }
 
     public static class Playlist{
-        public static final List<Song> defaultPlaylist = new ArrayList<>();
+        protected static final List<Song> defaultPlaylist = new ArrayList<>();
 
         public Playlist() {
             albums.get(0).addToPlaylist("Girls Got Rhythm", defaultPlaylist);

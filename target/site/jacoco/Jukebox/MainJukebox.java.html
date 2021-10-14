@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MainJukebox {
 
-<span class="fc" id="L9">    public static final List&lt;Album&gt; albums = new LinkedList&lt;&gt;();</span>
+<span class="fc" id="L9">    protected static final List&lt;Album&gt; albums = new LinkedList&lt;&gt;();</span>
 
 <span class="fc" id="L11">    public MainJukebox() {</span>
 
@@ -43,7 +43,7 @@ public class MainJukebox {
     }
 
     public static class Playlist{
-<span class="fc" id="L46">        public static final List&lt;Song&gt; defaultPlaylist = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L46">        protected static final List&lt;Song&gt; defaultPlaylist = new ArrayList&lt;&gt;();</span>
 
 <span class="fc" id="L48">        public Playlist() {</span>
 <span class="fc" id="L49">            albums.get(0).addToPlaylist(&quot;Girls Got Rhythm&quot;, defaultPlaylist);</span>
