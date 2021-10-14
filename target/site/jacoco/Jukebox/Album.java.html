@@ -41,12 +41,12 @@ public class Album {
 <span class="fc" id="L41">                return checkedSong;</span>
             }
 <span class="fc" id="L43">        }</span>
-<span class="fc" id="L44">        return null;</span>
+<span class="fc" id="L44">        return new Song();</span>
     }
 
     public boolean addToPlaylist(String track, List&lt;Song&gt; playlist) {
 <span class="fc" id="L48">        Song checkedSong = songAvailable(track);</span>
-<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (checkedSong != null) {</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (checkedSong.getSongTrack() != null) {</span>
 <span class="fc" id="L50">            playlist.add(checkedSong);</span>
 <span class="fc" id="L51">            return true;</span>
         }
@@ -72,10 +72,12 @@ public class Album {
 <span class="fc" id="L72">        return false;</span>
     }
 
-
     @Override
     public String toString() {
-<span class="fc" id="L78">        return &quot;{ Albums Available: [Album Name = &quot; + this.albumTitle + &quot;, Artist = &quot; + this.albumArtist + &quot;, Song List = &quot; + this.albumSongs + &quot;]}&quot;;</span>
+<span class="fc" id="L77">        return &quot;{ Albums Available: &quot; +</span>
+                &quot;[Album Name = &quot; + this.albumTitle +
+                &quot;, Artist = &quot; + this.albumArtist +
+                &quot;, Song List = &quot; + this.albumSongs + &quot;]}&quot;;
     }
 
 }

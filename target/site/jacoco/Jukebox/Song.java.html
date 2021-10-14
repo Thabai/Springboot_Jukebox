@@ -5,56 +5,52 @@ public class Song {
     private String songArtist;
 <span class="fc" id="L6">    private boolean songPlaying = false;</span>
 
-    public Song() {
-<span class="fc" id="L9">        this(&quot;test&quot;);</span>
-<span class="fc" id="L10">    }</span>
+<span class="fc" id="L8">    public Song() {</span>
+<span class="fc" id="L9">    }</span>
 
-    public Song(String track) {
-<span class="fc" id="L13">        this(&quot;test&quot;, &quot;tester&quot;);</span>
-<span class="fc" id="L14">    }</span>
 
     public Song(String track, String artist) {
-<span class="fc" id="L17">        super();</span>
-<span class="fc" id="L18">        this.songTrack = track;</span>
-<span class="fc" id="L19">        this.songArtist = artist;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L13">        super();</span>
+<span class="fc" id="L14">        this.songTrack = track;</span>
+<span class="fc" id="L15">        this.songArtist = artist;</span>
+<span class="fc" id="L16">    }</span>
 
     public String getSongTrack() {
-<span class="fc" id="L23">        return songTrack;</span>
+<span class="fc" id="L19">        return songTrack;</span>
     }
 
     public void setSongTrack(String songTrack) {
-<span class="fc" id="L27">        this.songTrack = songTrack;</span>
-<span class="fc" id="L28">    }</span>
+<span class="fc" id="L23">        this.songTrack = songTrack;</span>
+<span class="fc" id="L24">    }</span>
 
     public String getSongArtist() {
-<span class="fc" id="L31">        return songArtist;</span>
+<span class="fc" id="L27">        return songArtist;</span>
     }
 
     public void setSongArtist(String songArtist) {
-<span class="fc" id="L35">        this.songArtist = songArtist;</span>
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L31">        this.songArtist = songArtist;</span>
+<span class="fc" id="L32">    }</span>
 
     public void setSong(String track, String artist) {
-<span class="fc" id="L39">        this.songTrack = track;</span>
-<span class="fc" id="L40">        this.songArtist = artist;</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L35">        this.songTrack = track;</span>
+<span class="fc" id="L36">        this.songArtist = artist;</span>
+<span class="fc" id="L37">    }</span>
 
     public String getSong() {
-<span class="fc" id="L44">        return &quot;Now playing &quot; + this.songTrack + &quot; by the &quot; + this.songArtist;</span>
+<span class="fc" id="L40">        return &quot;Now playing &quot; + this.songTrack + &quot; by the &quot; + this.songArtist;</span>
     }
 
     public void play() {
-<span class="fc" id="L48">        songPlaying = true;</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L44">        songPlaying = true;</span>
+<span class="fc" id="L45">    }</span>
 
     public boolean getSongPlaying() {
-<span class="fc" id="L52">        return songPlaying;</span>
+<span class="fc" id="L48">        return songPlaying;</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L57">        return</span>
+<span class="fc" id="L53">        return</span>
                 &quot;{&quot; +
                         &quot;Track Name= &quot; + this.songTrack +
                         &quot;, Artist= &quot; + this.songArtist +

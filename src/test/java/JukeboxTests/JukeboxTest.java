@@ -1,7 +1,6 @@
 package JukeboxTests;
 
 import Jukebox.Album;
-import Jukebox.MainJukebox;
 import Jukebox.Song;
 import org.junit.jupiter.api.Test;
 
@@ -67,33 +66,6 @@ public class JukeboxTest {
             albumTest.get(0).addToPlaylist("Girls Got Rhythm", playlist);
 
         assertEquals("[{Track Name= Girls Got Rhythm, Artist= AC/DC}]", playlist.toString(), "No songs");
-    }
-
-    @Test
-    void availableAlbumsTest() {
-        MainJukebox albums = new MainJukebox();
-        assertEquals("[{\"albumSongs\":[{\"songTrack\":\"Girls Got Rhythm\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Walk All Over You\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Touch Too Much\",\"songArtist\":\"AC/DC\",\"songPlaying\":false}],\"albumTitle\":\"Highway to Hell\",\"albumArtist\":\"AC/DC\"},{\"albumSongs\":[{\"songTrack\":\"Farmers Daughter\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false},{\"songTrack\":\"Misirlou\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false},{\"songTrack\":\"Stoked\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false}],\"albumTitle\":\"Surfin USA\",\"albumArtist\":\"Beach Boys\"}]",
-                albums.toString(),
-                "No songs");
-    }
-
-
-    @Test
-    void defaultPlaylistTest() {
-        MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();
-        assertEquals("[{\"songTrack\":\"Girls Got Rhythm\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Touch Too Much\",\"songArtist\":\"AC/DC\",\"songPlaying\":false},{\"songTrack\":\"Stoked\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false}]", defaultPlaylist.toString(), "No songs");
-    }
-
-    @Test
-    void trackSearch() {
-        MainJukebox albums = new MainJukebox();
-        assertEquals("{Track Name= Girls Got Rhythm, Artist= AC/DC}", albums.trackAvailable("Girls Got Rhythm"), "Not found in albums");
-    }
-
-    @Test
-    void trackSearchFail() {
-        MainJukebox albums = new MainJukebox();
-        assertEquals("Sorry song is not available", albums.trackAvailable("Party 123"), "Failed to check albums");
     }
 
 }

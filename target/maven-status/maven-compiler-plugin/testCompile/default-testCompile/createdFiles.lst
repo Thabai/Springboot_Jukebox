@@ -4,4 +4,4 @@ com\tsi\springboot\SpringbootdemoApplicationTest.class
 JukeboxTests\SongTest.class
 JukeboxTests\AddSongTest.class
 JukeboxTests\AlbumTest.class
-Selenium\Selenium.class
+Selenium\SeleniumTest.class

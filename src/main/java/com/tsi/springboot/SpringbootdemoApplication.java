@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import static Jukebox.MainJukebox.*;
+
 
 @SpringBootApplication
 @RestController
@@ -17,23 +19,22 @@ public class SpringbootdemoApplication {
 	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(value="api/albums", method= RequestMethod.GET)
 	@GetMapping("/api/albums")
-	public String availableAlbums(){
+	public static String availableAlbums(){
 		MainJukebox albums = new MainJukebox();
 		return albums.toString();
 	}
 
 	@RequestMapping(value="/api/playlist", method= RequestMethod.GET)
 	@GetMapping("/api/playlist")
-	public String defaultPlaylist(){
+	public static String defaultPlaylist(){
 		availableAlbums();
-		MainJukebox.Playlist defaultPlaylist = new MainJukebox.Playlist();
+		Playlist defaultPlaylist = new Playlist();
 		return defaultPlaylist.toString();
 	}
 
 	@RequestMapping(value="/api/trackSearch", method= RequestMethod.GET)
 	@GetMapping("/api/trackSearch")
-	public String songTrackSearch(String songTrack) {
-		System.out.println(songTrack);
+	public static String songTrackSearch(String songTrack) {
 		MainJukebox albums = new MainJukebox();
 		return albums.trackAvailable(songTrack);
 	}
