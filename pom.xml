@@ -36,7 +36,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>5.3.9</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,7 +61,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-engine</artifactId>
-            <version>RELEASE</version>
+            <version>1.8.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -79,12 +78,12 @@
         <dependency>
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-junit4</artifactId>
-            <version>2.22.0</version>
+            <version>2.22.2</version>
         </dependency>
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
-            <version>5.8.0</version>
+            <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -100,19 +99,19 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.0.0-RC1</version>
+            <version>7.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.0.0-RC1</version>
+            <version>7.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-spring</artifactId>
-            <version>4.2.0</version>
+            <version>7.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
