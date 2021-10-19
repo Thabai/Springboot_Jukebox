@@ -9,6 +9,8 @@ public class SeleniumTest {
 
     public static void main(String[] args) throws InterruptedException {
 
+//        WebDriverManager.chromedriver().setup();
+
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\carly\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://localhost:8080/");
