@@ -1,5 +1,7 @@
 package Jukebox;
 
+import com.google.gson.Gson;
+
 public class Song {
     private String songTrack;
     private String songArtist;
@@ -52,8 +54,8 @@ public class Song {
     public String toString() {
         return
                 "{" +
-                        "Track Name= " + this.songTrack +
-                        ", Artist= " + this.songArtist +
-                        "}";
+                        "\"Track Name\": \"" + this.songTrack +
+                        "\", \"Artist\":\"" +  this.songArtist +
+                        "\"}";
     }
 }

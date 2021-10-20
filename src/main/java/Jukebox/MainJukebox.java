@@ -59,8 +59,6 @@ public class MainJukebox {
     }
 
 
-
-
     public static String printListAlbum(List<Album> linkedList) {
 
         Iterator<Album> albumName = linkedList.iterator();
