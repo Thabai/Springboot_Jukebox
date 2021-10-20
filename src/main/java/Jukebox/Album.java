@@ -1,5 +1,7 @@
 package Jukebox;
 
+import com.google.gson.Gson;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -74,10 +76,11 @@ public class Album {
 
     @Override
     public String toString() {
-        return "{ Albums Available: " +
+        String available = "{ Albums Available: " +
                 "[Album Name = " + this.albumTitle +
                 ", Artist = " + this.albumArtist +
                 ", Song List = " + this.albumSongs + "]}";
+        return new Gson().toJson(available);
     }
 
 }

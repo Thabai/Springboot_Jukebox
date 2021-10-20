@@ -16,23 +16,31 @@ public class SpringbootdemoApplication {
 		SpringApplication.run(SpringbootdemoApplication.class, args);
 	}
 
+	private static MainJukebox albums = new MainJukebox();
+	private static Playlist defaultPlaylist = new Playlist();
+
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/api/albums")
 	public static String availableAlbums() {
-		MainJukebox albums = new MainJukebox();
+		if (albums == null) {
+			albums = new MainJukebox();
+		}
 		return albums.toString();
 	}
 
+	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/api/playlist")
 	public static String defaultPlaylist() {
 		availableAlbums();
-		Playlist defaultPlaylist = new Playlist();
+		if (defaultPlaylist == null) {
+			defaultPlaylist = new Playlist();
+		}
 		return defaultPlaylist.toString();
 	}
 
+	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/api/trackSearch")
 	public static String songTrackSearch(String songTrack) {
-		MainJukebox albums = new MainJukebox();
 		return albums.trackAvailable(songTrack);
 	}
 }
