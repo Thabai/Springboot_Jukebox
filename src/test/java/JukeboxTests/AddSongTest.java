@@ -5,6 +5,11 @@ import Jukebox.MainJukebox;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -57,5 +62,32 @@ public class AddSongTest {
         actualAnswer = addSongToPlaylist(songAvailable);
         assertEquals("Not Added to playlist", actualAnswer);
     }
+
+    WebDriver driver;
+
+
+    @Given("I have opened a web browser")
+    public void i_have_opened_a_web_browser() {
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+    }
+    @When("I navigate to {string}")
+    public void i_navigate_to(String string) {
+       driver.get(string);
+    }
+    @Then("I should see the homepage")
+    public void i_should_see_the_homepage() {
+        assertEquals("Jukebox Adventure Box", driver.getTitle());
+    }
+    @When("I click the {string} button on the navbar")
+    public void i_click_the_button_on_the_navbar(String string) {
+        driver.findElement(By.className(string)).click();
+    }
+    @Then("I will be directed to the {string} url")
+    public void i_will_be_directed_to_the_url(String string) {
+        assertEquals("http://localhost:3000"+string, driver.getCurrentUrl());
+    }
+
 
 }
