@@ -2,17 +2,17 @@ package Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SeleniumTest {
 
 
     public static void main(String[] args) throws InterruptedException {
 
-//        WebDriverManager.chromedriver().setup();
-
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\carly\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver;
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
         driver.get("http://localhost:8080/");
         driver.manage().window();
 
@@ -39,6 +39,6 @@ public class SeleniumTest {
         } else {
             System.out.println("Search for track failed");
         }
-        driver.close();
+        driver.quit();
     }
 }
