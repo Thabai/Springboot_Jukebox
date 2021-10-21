@@ -46,7 +46,7 @@ public class Album {
 
     public List<Song> addToPlaylist(String track, List<Song> playlist) {
         Song checkedSong = songAvailable(track);
-        if (checkedSong.getSongTrack() != null) {
+        if (!checkedSong.getSongTrack().isEmpty()) {
             playlist.add(checkedSong);
         }
         return playlist;

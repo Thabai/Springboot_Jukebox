@@ -54,20 +54,16 @@ public class MainJukebox {
 <span class="fc" id="L54">        }</span>
 
         public static String createPlaylist(String track) {
-<span class="nc bnc" id="L57" title="All 2 branches missed.">            for (Album checkedSong : getAlbums()) {</span>
-<span class="nc bnc" id="L58" title="All 2 branches missed.">                if (checkedSong.songAvailable(track).getSongTrack() != null) {</span>
-<span class="nc" id="L59">                    return checkedSong.addToPlaylist(track, playlist1).toString();</span>
-<span class="nc" id="L60">                } System.out.println(playlist1);</span>
-<span class="nc" id="L61">            }</span>
-<span class="nc" id="L62">            return &quot;Something went wrong&quot;;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            for (Album checkedSong : getAlbums()) {</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">                if (checkedSong.songAvailable(track).getSongTrack() != null) {</span>
+<span class="fc" id="L59">                    return checkedSong.addToPlaylist(track, playlist1).toString();</span>
+                }
+<span class="fc" id="L61">            }</span>
+<span class="fc" id="L62">            return &quot;Something went wrong&quot;;</span>
         }
 
         public String toString(){
 <span class="fc" id="L66">            return new Gson().toJson(defaultPlaylist);</span>
-        }
-
-        public String toString1(){
-<span class="nc" id="L70">            return new Gson().toJson(playlist1);</span>
         }
 
     }
@@ -75,29 +71,29 @@ public class MainJukebox {
 
     public static String printListAlbum(List&lt;Album&gt; linkedList) {
 
-<span class="fc" id="L78">        Iterator&lt;Album&gt; albumName = linkedList.iterator();</span>
-<span class="fc" id="L79">        int albumNum = 0;</span>
-<span class="fc bfc" id="L80" title="All 2 branches covered.">        while (albumName.hasNext()) {</span>
+<span class="fc" id="L74">        Iterator&lt;Album&gt; albumName = linkedList.iterator();</span>
+<span class="fc" id="L75">        int albumNum = 0;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        while (albumName.hasNext()) {</span>
 
-<span class="fc" id="L82">            albumNum++;</span>
-<span class="fc" id="L83">            Album currentAlbum = albumName.next();</span>
-<span class="fc" id="L84">            return &quot;= Current Albums Available =&quot; + albumNum + &quot;: &quot; + currentAlbum.getAlbumTitle();</span>
+<span class="fc" id="L78">            albumNum++;</span>
+<span class="fc" id="L79">            Album currentAlbum = albumName.next();</span>
+<span class="fc" id="L80">            return &quot;= Current Albums Available =&quot; + albumNum + &quot;: &quot; + currentAlbum.getAlbumTitle();</span>
         }
 
-<span class="fc" id="L87">        return null;</span>
+<span class="fc" id="L83">        return null;</span>
     }
 
     public static String printPlaylist(List&lt;Song&gt; playlist) {
 
-<span class="fc" id="L92">        Iterator&lt;Song&gt; track = playlist.iterator();</span>
-<span class="fc" id="L93">        int songNum = 0;</span>
-<span class="fc bfc" id="L94" title="All 2 branches covered.">        while (track.hasNext()) {</span>
+<span class="fc" id="L88">        Iterator&lt;Song&gt; track = playlist.iterator();</span>
+<span class="fc" id="L89">        int songNum = 0;</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        while (track.hasNext()) {</span>
 
-<span class="fc" id="L96">            songNum++;</span>
-<span class="fc" id="L97">            Song currentSong = track.next();</span>
-<span class="fc" id="L98">            return &quot;= Current Songs On Playlist =&quot; + songNum + &quot;: &quot; + currentSong.getSongTrack();</span>
+<span class="fc" id="L92">            songNum++;</span>
+<span class="fc" id="L93">            Song currentSong = track.next();</span>
+<span class="fc" id="L94">            return &quot;= Current Songs On Playlist =&quot; + songNum + &quot;: &quot; + currentSong.getSongTrack();</span>
         }
-<span class="fc" id="L100">        return null;</span>
+<span class="fc" id="L96">        return null;</span>
 
     }
 

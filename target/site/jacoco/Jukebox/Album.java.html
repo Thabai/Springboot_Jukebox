@@ -46,7 +46,7 @@ public class Album {
 
     public List&lt;Song&gt; addToPlaylist(String track, List&lt;Song&gt; playlist) {
 <span class="fc" id="L48">        Song checkedSong = songAvailable(track);</span>
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (checkedSong.getSongTrack() != null) {</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (!checkedSong.getSongTrack().isEmpty()) {</span>
 <span class="fc" id="L50">            playlist.add(checkedSong);</span>
         }
 <span class="fc" id="L52">        return playlist;</span>

@@ -1,12 +1,9 @@
 package com.tsi.springboot;
 
 import Jukebox.MainJukebox;
-import Jukebox.Song;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 import static Jukebox.MainJukebox.*;
 
@@ -51,7 +48,6 @@ public class SpringbootdemoApplication {
 	@CrossOrigin("http://localhost:3000")
 	@PostMapping("/createPlaylist")
 	public static String createOwnPlaylist(String songTrack) {
-		Playlist.createPlaylist(songTrack);
-		return "Added to playlist";
+		return Playlist.createPlaylist(songTrack);
 	}
 }

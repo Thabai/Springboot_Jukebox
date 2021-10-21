@@ -30,14 +30,4 @@ class AlbumTest {
         assertEquals("Surfin USA", testSongs.getAlbumTitle(),"No Title set");
     }
 
-//    @Test
-//    void testGetPlaylist(){
-//        List<Album> albums = new LinkedList<>();
-//        Album testSongs = new Album("Surfin USA", "Beach Boys");
-//        testSongs.addAlbumSong("Party Rocking", "LMFAO");
-//        albums.add(testSongs);
-//        List<Song> playlist = new ArrayList<Song>();
-//        assertEquals("[{\"Track Name\": \"Party Rocking\", \"Artist\":\"LMFAO\"}]", albums.get(0).addToPlaylist("Party Rocking", playlist), "Song not found");
-//    }
-
 }

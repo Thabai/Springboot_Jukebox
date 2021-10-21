@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: JukeboxTests.RunnerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.738 s - in JukeboxTests.RunnerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.938 s - in JukeboxTests.RunnerTest

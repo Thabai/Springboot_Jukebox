@@ -35,12 +35,12 @@ class SpringbootdemoApplicationTest {
 
     @Test
     void createPlaylistTest() {
-        assertEquals("Added to playlist", SpringbootdemoApplication.createOwnPlaylist("Stoked"), "Failed to add to playlist");
+        assertEquals("[{\"Track Name\": \"Stoked\", \"Artist\":\"Beach Boys\"}]", SpringbootdemoApplication.createOwnPlaylist("Stoked"), "Failed to add to playlist");
     }
 
-//    @Test
-//    void createPlaylistFailTest() {
-//        assertEquals("Something went wrong", SpringbootdemoApplication.createOwnPlaylist("Party 123"), "Failed to check playlist");
-//    }
+    @Test
+    void createPlaylistFailTest() {
+        assertEquals("Something went wrong", SpringbootdemoApplication.createOwnPlaylist("Party 123"), "Failed to check playlist");
+    }
 
 }
