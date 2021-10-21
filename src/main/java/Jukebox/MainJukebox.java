@@ -70,7 +70,7 @@ public class MainJukebox {
 //            return new Gson().toJson(playlist1);
 //        }
 //
-//    }
+    }
 
 
     public static String printListAlbum(List<Album> linkedList) {
