@@ -79,14 +79,17 @@ public class AddSongTest {
     @Then("I should see the homepage")
     public void i_should_see_the_homepage() {
         assertEquals("Jukebox Adventure Box", driver.getTitle());
+        driver.quit();
     }
+
     @When("I click the {string} button on the navbar")
-    public void i_click_the_button_on_the_navbar(String string) {
+    public void i_click_the_button_on_the_navbar(String string)  {
         driver.findElement(By.className(string)).click();
     }
     @Then("I will be directed to the {string} url")
     public void i_will_be_directed_to_the_url(String string) {
         assertEquals("http://localhost:3000"+string, driver.getCurrentUrl());
+        driver.quit();
     }
 
 

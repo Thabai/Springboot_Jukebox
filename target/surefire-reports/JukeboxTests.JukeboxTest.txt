@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: JukeboxTests.JukeboxTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in JukeboxTests.JukeboxTest
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in JukeboxTests.JukeboxTest
+availableAlbumsToStringTest  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: No albums ==> expected: <[{ Albums Available: [Album Name = Highway to Hell, Artist = AC/DC, Song List = [{Track Name= Girls Got Rhythm, Artist= AC/DC}]]}]> but was: <["{ Albums Available: [Album Name \u003d Highway to Hell, Artist \u003d AC/DC, Song List \u003d [{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]]}"]>
+	at JukeboxTests.JukeboxTest.availableAlbumsToStringTest(JukeboxTest.java:56)
+
+defaultPlaylistToStringTest  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: No songs ==> expected: <[{Track Name= Girls Got Rhythm, Artist= AC/DC}]> but was: <[{"Track Name": "Girls Got Rhythm", "Artist":"AC/DC"}]>
+	at JukeboxTests.JukeboxTest.defaultPlaylistToStringTest(JukeboxTest.java:68)
+
