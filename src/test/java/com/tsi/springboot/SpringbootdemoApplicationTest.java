@@ -33,9 +33,14 @@ class SpringbootdemoApplicationTest {
         assertEquals("Sorry song is not available", songTrackSearch("Party 123"), "Failed to check albums");
     }
 
+    @Test
+    void createPlaylistTest() {
+        assertEquals("Added to playlist", SpringbootdemoApplication.createOwnPlaylist("Stoked"), "Failed to add to playlist");
+    }
+
 //    @Test
-//    void createPlaylistTest() {
-//        assertEquals("[{\"songTrack\":\"Stoked\",\"songArtist\":\"Beach Boys\",\"songPlaying\":false}]", SpringbootdemoApplication.createOwnPlaylist("Stoked"), "Failed to check albums");
+//    void createPlaylistFailTest() {
+//        assertEquals("Something went wrong", SpringbootdemoApplication.createOwnPlaylist("Party 123"), "Failed to check playlist");
 //    }
 
 }

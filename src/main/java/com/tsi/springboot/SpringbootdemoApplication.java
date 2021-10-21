@@ -22,6 +22,7 @@ public class SpringbootdemoApplication {
 	private static MainJukebox albums = new MainJukebox();
 	private static Playlist defaultPlaylist = new Playlist();
 
+
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/api/albums")
 	public static String availableAlbums() {
@@ -47,11 +48,10 @@ public class SpringbootdemoApplication {
 		return trackAvailable(songTrack);
 	}
 
-//	@CrossOrigin("http://localhost:3000")
-//	@PostMapping("/createPlaylist")
-//	public static String createOwnPlaylist(String songTrack) {
-//		Playlist playlist1 = new Playlist();
-//		Playlist.createPlaylist(songTrack);
-//		return playlist1.toString1();
-//	}
+	@CrossOrigin("http://localhost:3000")
+	@PostMapping("/createPlaylist")
+	public static String createOwnPlaylist(String songTrack) {
+		Playlist.createPlaylist(songTrack);
+		return "Added to playlist";
+	}
 }
