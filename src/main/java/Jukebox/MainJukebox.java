@@ -29,7 +29,7 @@ public class MainJukebox {
         return albums;
     }
 
-    public String trackAvailable(String track) {
+    public static String trackAvailable(String track) {
         for (Album checkedAlbum : getAlbums()) {
             if (checkedAlbum.songAvailable(track).getSongTrack() != null) {
                 return checkedAlbum.songAvailable(track).toString();
@@ -42,8 +42,9 @@ public class MainJukebox {
         return new Gson().toJson(albums);
     }
 
-    public static class Playlist{
+    public static class Playlist {
         protected static final List<Song> defaultPlaylist = new ArrayList<>();
+        private static List<Song> playlist1 = new ArrayList<>();
 
         public Playlist() {
             albums.get(0).addToPlaylist("Girls Got Rhythm", defaultPlaylist);
@@ -52,8 +53,21 @@ public class MainJukebox {
             printPlaylist(defaultPlaylist);
         }
 
+        public static String createPlaylist(String track) {
+            for (Album checkedSong : getAlbums()) {
+                if (checkedSong.songAvailable(track).getSongTrack() != null) {
+                    return checkedSong.addToPlaylist(track, playlist1).toString();
+                } System.out.println(playlist1);
+            }
+            return "Something went wrong";
+        }
+
         public String toString(){
             return new Gson().toJson(defaultPlaylist);
+        }
+
+        public String toString1(){
+            return new Gson().toJson(playlist1);
         }
 
     }

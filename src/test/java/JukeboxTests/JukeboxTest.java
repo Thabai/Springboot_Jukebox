@@ -53,7 +53,7 @@ class JukeboxTest {
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
         albumTest.add(testing);
-        assertEquals("[{ Albums Available: [Album Name = Highway to Hell, Artist = AC/DC, Song List = [{Track Name= Girls Got Rhythm, Artist= AC/DC}]]}]", albumTest.toString(), "No albums");
+        assertEquals("[{ Albums Available: [Album Name = Highway to Hell, Artist = AC/DC, Song List = [{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]]}]", albumTest.toString(), "No albums");
     }
 
     @Test
@@ -65,7 +65,7 @@ class JukeboxTest {
         ArrayList<Song> playlist = new ArrayList<Song>();
             albumTest.get(0).addToPlaylist("Girls Got Rhythm", playlist);
 
-        assertEquals("[{Track Name= Girls Got Rhythm, Artist= AC/DC}]", playlist.toString(), "No songs");
+        assertEquals("[{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]", playlist.toString(), "No songs");
     }
 
 }

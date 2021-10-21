@@ -14,7 +14,7 @@
 </form>
 
 <h1><a href="api/playlist">Jukebox Playlist</a></h1>
-<form action = "/api/playlist" method="GET" id="playlist">
+<form action = "/api/playlist" method="GET" id="defaultPlaylist">
     <div>
         <label>Make a playlist?</label>
         <button>View default playlist songs</button>
@@ -29,6 +29,13 @@
             <button>Search for Song</button>
         </div>
     </form>
+
+<form action="/createPlaylist" method="POST" id="createPlaylist">
+    <div>
+        <input name="songTrack" id="song" placeholder="song name:">
+        <button>Add Me</button>
+    </div>
+</form>
 
 </body>
 </html>

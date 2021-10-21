@@ -1,7 +1,5 @@
 package Jukebox;
 
-import com.google.gson.Gson;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,7 +15,7 @@ public class Album {
     }
 
     public void addAlbumSong(String track, String artist) {
-        albumSongs.add(new Song(track, artist));
+        this.albumSongs.add(new Song(track, artist));
     }
 
     public String getAlbumTitle() {
@@ -46,13 +44,12 @@ public class Album {
         return new Song();
     }
 
-    public boolean addToPlaylist(String track, List<Song> playlist) {
+    public List<Song> addToPlaylist(String track, List<Song> playlist) {
         Song checkedSong = songAvailable(track);
         if (checkedSong.getSongTrack() != null) {
             playlist.add(checkedSong);
-            return true;
         }
-        return false;
+        return playlist;
     }
 
     //cucumber
@@ -76,11 +73,10 @@ public class Album {
 
     @Override
     public String toString() {
-        String available = "{ Albums Available: " +
+        return  "{ Albums Available: " +
                 "[Album Name = " + this.albumTitle +
                 ", Artist = " + this.albumArtist +
                 ", Song List = " + this.albumSongs + "]}";
-        return new Gson().toJson(available);
     }
 
 }

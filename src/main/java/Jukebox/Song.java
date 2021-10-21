@@ -1,7 +1,5 @@
 package Jukebox;
 
-import com.google.gson.Gson;
-
 public class Song {
     private String songTrack;
     private String songArtist;

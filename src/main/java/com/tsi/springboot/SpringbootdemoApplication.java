@@ -1,9 +1,12 @@
 package com.tsi.springboot;
 
 import Jukebox.MainJukebox;
+import Jukebox.Song;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static Jukebox.MainJukebox.*;
 
@@ -41,6 +44,14 @@ public class SpringbootdemoApplication {
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/api/trackSearch")
 	public static String songTrackSearch(String songTrack) {
-		return albums.trackAvailable(songTrack);
+		return trackAvailable(songTrack);
 	}
+
+//	@CrossOrigin("http://localhost:3000")
+//	@PostMapping("/createPlaylist")
+//	public static String createOwnPlaylist(String songTrack) {
+//		Playlist playlist1 = new Playlist();
+//		Playlist.createPlaylist(songTrack);
+//		return playlist1.toString1();
+//	}
 }

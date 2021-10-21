@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.tsi.springboot.SpringbootdemoApplicationTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.497 s <<< FAILURE! - in com.tsi.springboot.SpringbootdemoApplicationTest
-trackSearchTest  Time elapsed: 0.013 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: Not found in albums ==> expected: <{Track Name= Stoked, Artist= Beach Boys}> but was: <{"Track Name": "Stoked", "Artist":"Beach Boys"}>
-	at com.tsi.springboot.SpringbootdemoApplicationTest.trackSearchTest(SpringbootdemoApplicationTest.java:24)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.27 s - in com.tsi.springboot.SpringbootdemoApplicationTest
