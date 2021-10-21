@@ -1,13 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: JukeboxTests.RunnerTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 18.153 s <<< FAILURE! - in JukeboxTests.RunnerTest
-Moving to the Albums page  Time elapsed: 3.998 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <http://localhost:3000/Albums> but was: <http://localhost:3000/>
-
-Moving to the Default Playlist page  Time elapsed: 3.978 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <http://localhost:3000/defaultPlaylist> but was: <http://localhost:3000/>
-
-Moving to the Create Playlist page  Time elapsed: 4.468 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <http://localhost:3000/createPlaylist> but was: <http://localhost:3000/>
-
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.47 s - in JukeboxTests.RunnerTest
