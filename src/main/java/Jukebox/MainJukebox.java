@@ -53,24 +53,24 @@ public class MainJukebox {
             printPlaylist(defaultPlaylist);
         }
 
-        public static String createPlaylist(String track) {
-            for (Album checkedSong : getAlbums()) {
-                if (checkedSong.songAvailable(track).getSongTrack() != null) {
-                    return checkedSong.addToPlaylist(track, playlist1).toString();
-                } System.out.println(playlist1);
-            }
-            return "Something went wrong";
-        }
+//        public static String createPlaylist(String track) {
+//            for (Album checkedSong : getAlbums()) {
+//                if (checkedSong.songAvailable(track).getSongTrack() != null) {
+//                    return checkedSong.addToPlaylist(track, playlist1).toString();
+//                } System.out.println(playlist1);
+//            }
+//            return "Something went wrong";
+//        }
 
         public String toString(){
             return new Gson().toJson(defaultPlaylist);
         }
 
-        public String toString1(){
-            return new Gson().toJson(playlist1);
-        }
-
-    }
+//        public String toString1(){
+//            return new Gson().toJson(playlist1);
+//        }
+//
+//    }
 
 
     public static String printListAlbum(List<Album> linkedList) {
