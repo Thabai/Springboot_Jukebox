@@ -23,32 +23,26 @@ import static Jukebox.MainJukebox.*;
 	@CrossOrigin(&quot;http://localhost:3000&quot;)
 	@GetMapping(&quot;/api/albums&quot;)
 	public static String availableAlbums() {
-<span class="pc bpc" id="L26" title="1 of 2 branches missed.">		if (albums == null) {</span>
-<span class="nc" id="L27">			albums = new MainJukebox();</span>
-		}
-<span class="fc" id="L29">		return albums.toString();</span>
+<span class="fc" id="L26">		return albums.toString();</span>
 	}
 
 	@CrossOrigin(&quot;http://localhost:3000&quot;)
 	@GetMapping(&quot;/api/playlist&quot;)
 	public static String defaultPlaylist() {
-<span class="fc" id="L35">		availableAlbums();</span>
-<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if (defaultPlaylist == null) {</span>
-<span class="nc" id="L37">			defaultPlaylist = new Playlist();</span>
-		}
-<span class="fc" id="L39">		return defaultPlaylist.toString();</span>
+<span class="fc" id="L32">		availableAlbums();</span>
+<span class="fc" id="L33">		return defaultPlaylist.toString();</span>
 	}
 
 	@CrossOrigin(&quot;http://localhost:3000&quot;)
 	@GetMapping(&quot;/api/trackSearch&quot;)
 	public static String songTrackSearch(String songTrack) {
-<span class="fc" id="L45">		return trackAvailable(songTrack);</span>
+<span class="fc" id="L39">		return trackAvailable(songTrack);</span>
 	}
 
 	@CrossOrigin(&quot;http://localhost:3000&quot;)
 	@PostMapping(&quot;/createPlaylist&quot;)
 	public static String createOwnPlaylist(String songTrack) {
-<span class="fc" id="L51">		return Playlist.createPlaylist(songTrack);</span>
+<span class="fc" id="L45">		return Playlist.createPlaylist(songTrack);</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

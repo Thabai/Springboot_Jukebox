@@ -23,9 +23,6 @@ public class SpringbootdemoApplication {
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/api/albums")
 	public static String availableAlbums() {
-		if (albums == null) {
-			albums = new MainJukebox();
-		}
 		return albums.toString();
 	}
 
@@ -33,9 +30,6 @@ public class SpringbootdemoApplication {
 	@GetMapping("/api/playlist")
 	public static String defaultPlaylist() {
 		availableAlbums();
-		if (defaultPlaylist == null) {
-			defaultPlaylist = new Playlist();
-		}
 		return defaultPlaylist.toString();
 	}
 
