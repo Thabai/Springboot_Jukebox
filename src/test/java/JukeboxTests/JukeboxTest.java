@@ -15,22 +15,22 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class JukeboxTest {
 
     @Test
-    void printAlbum() {
+    void printAlbumTest() {
         LinkedList<Album> albumTest = new LinkedList<>();
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
         albumTest.add(testing);
-        assertEquals("= Current Albums Available =1: Highway to Hell", printListAlbum(albumTest), "No albums");
+        assertEquals("= Current Albums Available =1: Highway to Hell", printListAlbum(albumTest), "No albums found");
     }
 
     @Test
-    void printAlbumToFail() {
+    void printAlbumToFailTest() {
         LinkedList<Album> albumTest = new LinkedList<>();
-        assertNull(printListAlbum(albumTest), "Did not fail");
+        assertNull(printListAlbum(albumTest), "Did not fail but should have");
     }
 
     @Test
-    void printPlaylistSongs() {
+    void printPlaylistSongsTest() {
         LinkedList<Album> albumTest = new LinkedList<>();
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
@@ -38,13 +38,13 @@ class JukeboxTest {
         ArrayList<Song> playlist = new ArrayList<Song>();
             albumTest.get(0).addToPlaylist("Girls Got Rhythm", playlist);
 
-        assertEquals("= Current Songs On Playlist =1: Girls Got Rhythm", printPlaylist(playlist), "No songs");
+        assertEquals("= Current Songs On Playlist =1: Girls Got Rhythm", printPlaylist(playlist), "No songs found in playlist");
     }
 
     @Test
-    void printPlaylistSongsToFail() {
+    void printPlaylistSongsToFailTest() {
         ArrayList<Song> playlist = new ArrayList<Song>();
-        assertNull(printPlaylist(playlist), "Did not fail");
+        assertNull(printPlaylist(playlist), "Did not fail but should have");
     }
 
     @Test
@@ -53,7 +53,8 @@ class JukeboxTest {
         Album testing = new Album("Highway to Hell", "AC/DC");
         testing.addAlbumSong("Girls Got Rhythm", "AC/DC");
         albumTest.add(testing);
-        assertEquals("[{ Albums Available: [Album Name = Highway to Hell, Artist = AC/DC, Song List = [{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]]}]", albumTest.toString(), "No albums");
+        assertEquals("[{ Albums Available: [Album Name = Highway to Hell, Artist = AC/DC, Song List = [{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]]}]",
+                albumTest.toString(), "No albums found");
     }
 
     @Test
@@ -65,7 +66,7 @@ class JukeboxTest {
         ArrayList<Song> playlist = new ArrayList<Song>();
             albumTest.get(0).addToPlaylist("Girls Got Rhythm", playlist);
 
-        assertEquals("[{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]", playlist.toString(), "No songs");
+        assertEquals("[{\"Track Name\": \"Girls Got Rhythm\", \"Artist\":\"AC/DC\"}]", playlist.toString(), "No playlist found");
     }
 
 }
