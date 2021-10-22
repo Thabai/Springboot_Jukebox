@@ -14,17 +14,17 @@ public class SeleniumTest {
         WebDriver driver;
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("http://localhost:8080/");
+        driver.get("http://localhost:9001/");
         driver.manage().window();
         driver.findElement(By.linkText("Jukebox Albums")).click();
-        if(driver.getCurrentUrl().equals("http://localhost:8080/api/albums")){
+        if(driver.getCurrentUrl().equals("http://localhost:9001/api/albums")){
             System.out.println("Find jukebox albums passed");
         } else {
             System.out.println("Find jukebox albums failed");
         }
         driver.navigate().back();
         driver.findElement(By.linkText("Jukebox Playlist")).click();
-        if(driver.getCurrentUrl().equals("http://localhost:8080/api/playlist")){
+        if(driver.getCurrentUrl().equals("http://localhost:9001/api/playlist")){
             System.out.println("Find jukebox default playlist passed");
         } else {
             System.out.println("Find jukebox default playlist failed");
