@@ -8,7 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SeleniumTest {
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
 
         WebDriver driver;
