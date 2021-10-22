@@ -2,7 +2,7 @@ package Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SeleniumTest {
@@ -12,8 +12,8 @@ public class SeleniumTest {
 
 
         WebDriver driver;
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get("http://localhost:8080/");
         driver.manage().window();
         driver.findElement(By.linkText("Jukebox Albums")).click();

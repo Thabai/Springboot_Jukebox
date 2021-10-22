@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -68,8 +68,8 @@ public class AddSongTest {
 
     @Given("I have opened a web browser")
     public void i_have_opened_a_web_browser() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
     @When("I navigate to {string}")
